@@ -5,6 +5,7 @@ import RulesScreen from '../screens/RulesScreen';
 import StartScreen from '../screens/StartScreen';
 import PickingScreen from '../screens/PickingScreen';
 import GameScreen from '../screens/GameScreen';
+import LocationsScreen from '../screens/LocationsScreen';
 
 
 
@@ -32,7 +33,13 @@ const Navigator = createStackNavigator({
         navigationOptions: () => ({
             header: null,
           }),
-    }
+    },
+    Locations: {
+        screen: LocationsScreen,
+        navigationOptions: () => ({
+            header: null,
+          }),
+    },
 
 })
 

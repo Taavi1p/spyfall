@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import CustomHeader from '../components/CustomHeader';
 import MainButton from '../components/MainButton';
+import Pictures from '../packs/BasicPack';
 
 const GameScreen = props => {
     const goToStart = () => {
@@ -38,44 +39,7 @@ const GameScreen = props => {
     return (
         <View style={styles.screen}>
             <CustomHeader onClick={goToStart}>end game</CustomHeader>
-             <View style={styles.container}>
-                 <View>
-                    <Image resizeMode='contain' style={styles.icon} source={require('../assets/airplane.png')} />
-                    <Text style={styles.name}>airplane</Text>
-                </View>
-                 <View>
-                    <Image resizeMode='contain' style={styles.icon} source={require('../assets/diamond-ring.png')} />
-                    <Text style={styles.name}>wedding</Text>
-                 </View>
-                 <View>                
-                    <Image resizeMode='contain' style={styles.icon} source={require('../assets/dices.png')} />
-                    <Text style={styles.name}>casino</Text>
-                </View>
-                 <View>
-                    <Image resizeMode='contain' style={styles.icon} source={require('../assets/gallery.png')} />
-                    <Text style={styles.name}>art gallery</Text>
-                </View>
-                 <View>
-                    <Image resizeMode='contain' style={styles.icon} source={require('../assets/mining.png')} />
-                    <Text style={styles.name}>cole mine</Text>
-                </View>
-                 <View>
-                    <Image resizeMode='contain' style={styles.icon} source={require('../assets/roller-coaster.png')} />
-                    <Text style={styles.name}>amusement park</Text>
-                </View>
-                 <View>
-                    <Image resizeMode='contain' style={styles.icon} source={require('../assets/sauna.png')} />
-                    <Text style={styles.name}>spa</Text>
-                </View>
-                 <View>
-                    <Image resizeMode='contain' style={styles.icon} source={require('../assets/trumpet.png')} />
-                    <Text style={styles.name}>jazz club</Text>
-                </View>
-                 <View>
-                    <Image resizeMode='contain' style={styles.icon} source={require('../assets/vulture.png')} />
-                    <Text style={styles.name}>zoo</Text>
-                </View>
-             </View>
+             <Pictures />
             <View style={styles.buttons}>
                <Text style={styles.time}>{timer}</Text>
                 <MainButton onClick={startClock}>Start Timer</MainButton>
@@ -89,17 +53,6 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingBottom: 40,
     },
-    icon: {
-        height: 80,
-        width: 80,
-        marginTop: 30,
-        marginHorizontal: 10,
-    },
-    container: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: "space-evenly",
-    },
     buttons: {
         flexDirection: 'row',
         marginTop: 'auto',
@@ -107,10 +60,6 @@ const styles = StyleSheet.create({
     },
     time: {
         fontSize: 40,
-    },
-    name: {
-        textAlign: 'center',
-        marginTop: 3,
     }
 })
 
