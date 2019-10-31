@@ -10,7 +10,7 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/spy.png",
+    "icon": "./assets/ios-icon.png",
     "splash": {
       "image": "./assets/spy-splash.png",
       "resizeMode": "contain",
@@ -23,11 +23,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
+      "supportsTablet": false,
       "bundleIdentifier": "com.taavi.spyfall"
     },
     "android": {
-      "package": "com.taavi.spyfall"
+      "package": "com.taavi.spyfall",
+      "permissions": []
     }
   }
 }

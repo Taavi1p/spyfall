@@ -14,10 +14,10 @@ const StartScreen = props => {
         }
     }
     const substractPlayers = () => {
-        if (playersNumber > 3 && spiesNumber < playersNumber){
+        if (playersNumber > 2 && spiesNumber < playersNumber){
             setPlayersNumber(playersNumber - 1);
         }
-        else if (playersNumber > 3 && spiesNumber === playersNumber)
+        else if (playersNumber > 2 && spiesNumber === playersNumber)
         {
             setPlayersNumber(playersNumber - 1);
             setSpiesNumber(spiesNumber - 1);           
@@ -74,7 +74,7 @@ const StartScreen = props => {
                 <Text style={styles.text}>{spyText}</Text>
                 <InputButton add={addSpies} substract={substractSpies}  />
             </View>
-            <View style={styles.button}><Button onPress={toLocation} title="show locations" color='black' /></View>
+            <View style={styles.button}><Button onPress={toLocation} title="choose locations" color='black' /></View>
             <View style={styles.buttons}>
                 <MainButton onClick={toRules}>rules</MainButton>
                 <MainButton onClick={startGame}>start</MainButton>
