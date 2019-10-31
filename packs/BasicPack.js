@@ -40,7 +40,7 @@ const BasicPack = () => {
                 <Image resizeMode='contain' style={styles.icon} source={require('../assets/vulture.png')} />
                 <Text style={styles.name}>zoo</Text>
             </View>
-             </View>
+        </View>
     )
 }
 const styles = StyleSheet.create({
@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: "space-evenly",
+        marginBottom: 30,
     },
     name: {
         textAlign: 'center',

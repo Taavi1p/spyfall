@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: "space-evenly",
+        marginBottom: 30,
     },
     name: {
         textAlign: 'center',
