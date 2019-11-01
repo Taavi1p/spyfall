@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Button, TouchableOpacity, Animated} from 'react
 import CustomHeader from '../components/CustomHeader';
 import BlackBox from '../components/BlackBox';
 import Card from '../components/Card';
+import * as Animatable from 'react-native-animatable';
 
 const options = [
 [
@@ -127,7 +128,7 @@ const PickingScreen = props => {
     }
 
     let Content = <BlackBox onClick={onReveal} />;
-    let gotIt = <View style={{width: '100%', height: 60}}></View>;
+    let gotIt = <Animatable.View animation="fadeIn" duration={2200} delay={2400} style={{width: '100%', height: 60}}></Animatable.View>;
     
     if (roleVisible === true ){
         Content = <Card role={job} location={locy} />;
@@ -135,7 +136,7 @@ const PickingScreen = props => {
     }
     else if (roleVisible === false){
         Content = <BlackBox onClick={onReveal} />;
-        gotIt = <View style={{width: '100%', height: 60}}></View>
+        gotIt = <Animatable.View animation="fadeIn" duration={2200} delay={2400} style={{width: '100%', height: 60}}></Animatable.View>
     }
 
     return (
