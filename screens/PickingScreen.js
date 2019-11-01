@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity, Animated} from 'react-native';
 import CustomHeader from '../components/CustomHeader';
 import BlackBox from '../components/BlackBox';
 import Card from '../components/Card';

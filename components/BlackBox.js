@@ -5,7 +5,12 @@ const BlackBox = props => {
     return (
         <TouchableOpacity onPress={props.onClick}>
             <View style={styles.box}>
-                <Text style={styles.text}>Reveal</Text>
+                <View style={[styles.westBox, styles.triangle]}></View>
+                <View>
+                    <View style={[styles.northBox, styles.triangle]}></View>
+                    <View style={[styles.southBox, styles.triangle]}></View>
+                </View>
+                <View style={[styles.eastBox, styles.triangle]}></View>
             </View>
         </TouchableOpacity>
     )
@@ -13,16 +18,40 @@ const BlackBox = props => {
 
 const styles = StyleSheet.create({
     box: {
-        height: 250,
-        width: 250,
+        height: 260,
+        width: 260,
+        flexDirection: 'row',
+        overflow: 'hidden',
+        backgroundColor: 'blue',
+    },
+    triangle: {
+        height: 183,
+        width: 183,
+    },
+    westBox: {
+        marginTop: 38,
+        marginLeft: -90,
+        transform: [{ rotate: '45deg'}],
         backgroundColor: 'black',
-        justifyContent: 'center',
-    }, 
-    text: {
-        color: 'white',
-        fontSize: 25,
-        fontWeight: 'bold',
-        textAlign: 'center',
+    },
+    northBox: {
+        marginLeft: -53,
+        marginTop: -91,
+        transform: [{ rotate: '45deg'}],
+        backgroundColor: 'yellow',
+    },
+    southBox: {
+        marginLeft: -53,
+        marginTop: 'auto',
+        marginBottom: -90,
+        transform: [{ rotate: '45deg'}],
+        backgroundColor: 'green',
+    },
+    eastBox: {
+        marginTop: 38,
+        marginLeft: -54,
+        transform: [{ rotate: '45deg'}],
+        backgroundColor: 'orange',
     }
 })
 
