@@ -7,7 +7,7 @@ const StartScreen = props => {
     const [playersNumber, setPlayersNumber] = useState(5);
     const [spiesNumber, setSpiesNumber] = useState(1);
     const [spyText, setSpyText] = useState('spy');
-
+    
     const addPlayers = () => {
         if (playersNumber < 99) {
             setPlayersNumber(playersNumber + 1);

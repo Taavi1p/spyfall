@@ -4,53 +4,9 @@ import CustomHeader from '../components/CustomHeader';
 import BlackBox from '../components/BlackBox';
 import Card from '../components/Card';
 import * as Animatable from 'react-native-animatable';
-
-const options = [
-[
-    'airplane',
-    [ 'pilot', 'co-pilot', 'flight attendant', 'engineer', 'First-class passenger', 'economy-class passenger'],
-    ['../assets/airplane.png']
-],
-[
-    'wedding',
-    [ 'ring bearer', 'Father of the bride', 'Groom', 'photographer', 'best man', 'flower girl', 'bride', 'wedding chrasher', 'relative' ],
-    ['../assets/diamond-ring.png']
-],
-[
-    'spa',
-    [ 'nail specialist', 'masseur', 'life guard', 'receptionist', 'customer'  ],
-    ['../assets/sauna.png']
-],
-[
-    'zoo',
-    [ 'zookeeper', 'food vendor', 'photographer', 'cashier', 'researcher', 'veterinarian', 'child', 'visitor', 'tourist' ],
-    ['../assets/vulture.png']
-],
-[
-    'amusement park',
-    [ 'cashier', 'janitor', 'food vendor', 'ride operator', 'security guard', 'annoying child', 'teenager', 'parent', 'happy child' ],
-    ['../assets/roller-coaster.png']
-],
-[
-    'jazz club',
-    ['pianist', 'drummer', 'saxophonist', 'dancer', 'bouncer', 'barman', 'vip', 'jazz fanatic'],
-    ['../assets/trumpet.png']
-],
-[
-    'art museum',
-    [ 'security guard', 'photographer', 'teacher', 'ticket seller', 'art critic', 'painter', 'art collector', 'visitor', 'student', 'tourist' ],
-    ['../assets/gallery.png']
-],
-[
-    'coal mine',
-    [ 'blasting engineer', 'soild waste engineer', 'dump truck operator', 'overseer', 'safety inspector', 'worker',  'coordinator', 'driller', 'miner'  ],
-    ['../assets/mining.png']
-],
-[
-    'casino',
-    [ 'bartender', 'administrator', 'head of security', 'administrator', 'bouncer','dealer', 'gambler' ],
-    ['../assets/dices.png']
-]]
+import Basics from '../data/basics';
+import Movies from '../data/movies';
+import TVShows from '../data/tvshows';
 
 
 const PickingScreen = props => {
@@ -86,7 +42,7 @@ const PickingScreen = props => {
     }
     if (select)
     {
-        setLocation(options[randomLocation][0]);
+        setLocation(Movies[randomLocation][0]);
         setLocy(location);
         setRandomNumber(Math.floor(Math.random()*(roleArray.length)))
         setRandomRole(roleArray[randomNumber]);
@@ -100,14 +56,14 @@ const PickingScreen = props => {
     const onReveal = () => {
         console.log(roleArray);
         setRoleVisible(true);
-        setLocation(options[randomLocation][0]);
+        setLocation(Movies[randomLocation][0]);
         setLocy(location);
-        setRandomJob(Math.floor(Math.random()*(options[randomLocation][1].length-1)));
+        setRandomJob(Math.floor(Math.random()*(Movies[randomLocation][1].length-1)));
         setRandomNumber(Math.floor(Math.random()*(roleArray.length-1)));
         setRandomRole(roleArray[randomNumber]);
         roleArray.splice(randomNumber, 1);
         if (randomRole === 'player'){
-            setJob(options[randomLocation][1][randomJob])
+            setJob(Movies[randomLocation][1][randomJob])
         }
         else {
             setJob(randomRole);
