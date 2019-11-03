@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity, Animated} from 'react-native';
 import CustomHeader from '../components/CustomHeader';
 import BlackBox from '../components/BlackBox';
@@ -13,14 +13,10 @@ const PickingScreen = props => {
     const spiesNumber = props.navigation.getParam('spyAmount');
     const [roleVisible, setRoleVisible] = useState(false);
     const [randomLocation, setRandomLocation] = useState(Math.floor(Math.random()*9));
-    const [randomJob, setRandomJob] = useState(0);
     const [location, setLocation] = useState('');
     const [playerTurn, setPlayerTurn] = useState(1);
-    const [firstTime, setFirstTime] = useState(true);
-    const [randomRole, setRandomRole] = useState('');
     const [roleArray, setRoleArray] = useState([]);
-    let number = 0;
-    const [randomNumber, setRandomNumber] = useState(number);
+    const [randomNumber, setRandomNumber] = useState(0);
     const [select, setSelect] = useState(true);
     const [job, setJob] = useState('');
     const [locy, setLocy] = useState('');
@@ -28,55 +24,44 @@ const PickingScreen = props => {
 
 
     const makeArray = () => {
-        for (i = 0; i < spiesNumber; i++){
-            console.log('spy');
-            roleArray.push('you\'re a spy')
-        }
+        console.log('----------New Game-------------')
         for (i = 0; i < playerNumber; i++){
             console.log('player');
             roleArray.push('player')
         }
-        number = Math.floor(Math.random()*(roleArray.length));
-        console.log(number);
+        for (i = 0; i < spiesNumber; i++){
+            console.log('spy');
+            let generator = Math.floor(Math.random()*(roleArray.length + 1));
+            roleArray.splice(generator, 0, 'spy')
+        }
+        console.log(roleArray)
     }
 
-    if (firstTime) {
-        makeArray();
-        setFirstTime(false);
-        
-    }
     if (select)
     {
+        makeArray();
         setLocation(currentPacks[randomPack][randomLocation][0]);
         setLocy(location);
-        setRandomNumber(Math.floor(Math.random()*(roleArray.length)))
-        setRandomRole(roleArray[number]);
         setSelect(false);
+    }
+
+    const onReveal = () => {
+        setRoleVisible(true);
+        setLocation(currentPacks[randomPack][randomLocation][0]);
+        setLocy(location);
+        setJob(currentPacks[randomPack][randomLocation][1][Math.floor(Math.random()*(currentPacks[randomPack][randomLocation][1].length-1))]);
+        
+        if (roleArray[0] === 'spy'){
+            setJob('you\'re the spy');
+            setLocy('')
+        }
+
+        roleArray.shift();
     }
 
     const goToStart = () => {
         props.navigation.navigate({routeName: 'Start'})
     }
-    const onReveal = () => {
-        setRoleVisible(true);
-        setLocation(currentPacks[randomPack][randomLocation][0]);
-        setLocy(location);
-        setRandomJob(Math.floor(Math.random()*(currentPacks[randomPack][randomLocation][1].length-1)));
-        setRandomNumber(Math.floor(Math.random()*(roleArray.length-1)));
-        setRandomRole(roleArray[randomNumber]);
-        roleArray.splice(randomNumber, 1);
-        console.log(roleArray);
-        console.log(randomNumber);
-        console.log('random role =' + randomRole)
-        if (randomRole === 'player'){
-            setJob(currentPacks[randomPack][randomLocation][1][randomJob])
-        }
-        else {
-            setJob(randomRole);
-            setLocy('')
-        }
-    }
-
 
     const onGotIt = () => {
         if (roleArray.length >= 1) {

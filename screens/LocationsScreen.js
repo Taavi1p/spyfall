@@ -5,42 +5,50 @@ import BasicPack from '../packs/BasicPack';
 import MoviesPack from '../packs/MoviesPack';
 import TVShowsPack from '../packs/TVShowsPack';
 import LocationHeader from '../components/LocationHeader';
+import { useSelector } from 'react-redux';
 
 const LocationScreen = props => {
 
     const goToStart = () => {
         props.navigation.navigate({routeName: 'Start'})
     }
-
+    const isBasics = useSelector(state => state.packs.isBasics);
+    const isMovies = useSelector(state => state.packs.isMovies);
+    const isTVShows = useSelector(state => state.packs.isTVShows);
     const Basics = <BasicPack />;
     const Movies = <MoviesPack />;
     const TVShows = <TVShowsPack />;
     const Nothing = <View></View>;
     
-    const [isBasics, setIsBasic] = useState(true);
-    const [isMovies, setIsMovies] = useState(true);
-    const [isTVShows, setIsTVShows] = useState(true);
+    const [isOpenBasics, setIsOpenBasic] = useState(true);
+    const [isOpenMovies, setIsOpenMovies] = useState(false);
+    const [isOpenTVShows, setIsOpenTVShows] = useState(false);
+
 
     const changeBasics = () => {
-        setIsBasic(!isBasics);
+        setIsOpenBasic(!isOpenBasics);
     }
     const changeMovies = () => {
-        setIsMovies(!isMovies);
+        setIsOpenMovies(!isOpenMovies);
     }
     const changeTVShows = () => {
-        setIsTVShows(!isTVShows);
+        setIsOpenTVShows(!isOpenTVShows);
     }
+
+    console.log(isBasics)
 
     return (
         <View style={styles.container}>
             <CustomHeader onClick={goToStart}>back</CustomHeader>
-            <ScrollView style={styles.scroll}>
-                <LocationHeader onClick={changeBasics}>Basic</LocationHeader>
-                {isBasics ? Basics : Nothing}
-                <LocationHeader onClick={changeMovies}>Movies</LocationHeader>
-                {isMovies ? Movies : Nothing}
-                <LocationHeader onClick={changeTVShows}>TV Shows</LocationHeader>
-                {isTVShows ? TVShows : Nothing}
+            <ScrollView>
+                <View style={styles.scroll}>
+                    <LocationHeader value={isBasics} onClick={changeBasics}>Basic</LocationHeader>
+                    {isOpenBasics ? Basics : Nothing}
+                    <LocationHeader value={isMovies} onClick={changeMovies}>Movies</LocationHeader>
+                    {isOpenMovies ? Movies : Nothing}
+                    <LocationHeader value={isTVShows} onClick={changeTVShows}>TV Shows</LocationHeader>
+                    {isOpenTVShows ? TVShows : Nothing}
+                </View>
             </ScrollView>
         </View>
     )
@@ -51,34 +59,10 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     scroll: {
-        paddingTop: 40,
+        paddingTop: 30,
+        paddingBottom: 10,
+        
     },
-    headerContainer: {
-        flexDirection: 'row',
-        paddingLeft: 10,
-        backgroundColor: '#ebebeb',
-        height: 50,
-        alignItems: 'center'
-    },
-    text: {
-        fontSize: 30,
-        lineHeight: 50,
-        textAlignVertical: 'center',
-    },
-    toggle: {
-        marginLeft: 20,
-    },
-    image: {
-        height: 30,
-        width: 30,
-        marginLeft: 'auto',
-    },
-    clickArea: {
-        height: '100%',
-        justifyContent: 'center',
-        paddingRight: 20,
-        flex: 1,
-    }
 })
 
 export default LocationScreen

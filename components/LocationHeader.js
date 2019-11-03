@@ -7,7 +7,7 @@ const LocationHeader = props => {
         <View style={styles.container}>
             <Text style={styles.text}>{props.children}</Text>
             <View style={styles.toggle}><Switch 
-                value={true}
+                value={props.value}
                 onValueChange={(val) => console.log(val)}
                 disabled={false}
                 activeText={'Off'}
