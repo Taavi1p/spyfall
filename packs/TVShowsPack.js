@@ -40,7 +40,8 @@ const TVShowsPack = () => {
                 <Image resizeMode='contain' style={styles.icon} source={require('../assets/breaking.png')} />
                 <Text style={styles.name}>Breaking Bad</Text>
             </View>
-             </View>
+        </View>
+   
     )
 }
 const styles = StyleSheet.create({

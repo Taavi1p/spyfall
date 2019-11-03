@@ -27,4 +27,12 @@ export default [
         'How I met your mother',
         [ 'Ted Mosby', 'robin scherbatsky', 'The Mother', 'lily aldrin', 'Marshall Eriksen', 'Barney Stinson']
     ],
+    [
+        'South Park',
+        ['Kenny', 'Eric Cartman', 'Kyle Broflovski', 'Stan Marsh', 'the Chef', 'Butters Stotch', 'Randy Marsh', 'Mr. Garrison']
+    ],
+    [
+        'The Walking Dead',
+        ['Rick Grimes', 'Negan', 'zombie', 'maggie greene', 'Daryl Dixon', 'Michonne', 'Glenn Rhee']
+    ]
 ]

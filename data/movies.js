@@ -13,11 +13,11 @@ export default [
     ],
     [
         'Titanic', 
-        [ 'Rose', 'The Captain', 'band member', 'cruise worker', 'middle-class tourist', 'old time celebrity' ]
+        [ 'Rose', 'Jack', 'The Captain', 'band member', 'cruise worker', 'middle-class tourist', 'old time celebrity' ]
     ],
     [
         'Shrek',
-        ['Shrek', 'Princess Fiona', 'Gingerbread man', 'Puss In Boots', 'Donkey', 'Dragon', 'Dronkey', 'shrek lord farquaad', 'Queen Lillian', ]
+        ['Shrek', 'Princess Fiona', 'Gingerbread man', 'Puss In Boots', 'Donkey', 'Dragon', 'Dronkey', 'Lord Farquaad', 'Queen Lillian', ]
     ],
     [
         'Harry Potter',
@@ -31,4 +31,8 @@ export default [
         'Justice League',
         ['Batman', 'Superman', 'Joker', 'Flash', 'Super woman', 'Aquaman']
     ],
+    [
+        'Toy story',
+        ['Sheriff Woody', 'Buzz Lightyear', 'T-rex', 'Mr. Potato Head', 'Sergeant', 'Slinky Dog']
+    ]
 ]

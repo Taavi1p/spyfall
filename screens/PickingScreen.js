@@ -4,12 +4,11 @@ import CustomHeader from '../components/CustomHeader';
 import BlackBox from '../components/BlackBox';
 import Card from '../components/Card';
 import * as Animatable from 'react-native-animatable';
-import Basics from '../data/basics';
-import Movies from '../data/movies';
-import TVShows from '../data/tvshows';
+import { useSelector } from 'react-redux';
 
 
 const PickingScreen = props => {
+    const currentPacks = useSelector(state => state.packs.packs)
     const playerNumber = props.navigation.getParam('playerAmount');
     const spiesNumber = props.navigation.getParam('spyAmount');
     const [roleVisible, setRoleVisible] = useState(false);
@@ -20,10 +19,13 @@ const PickingScreen = props => {
     const [firstTime, setFirstTime] = useState(true);
     const [randomRole, setRandomRole] = useState('');
     const [roleArray, setRoleArray] = useState([]);
-    const [randomNumber, setRandomNumber] = useState(2);
+    let number = 0;
+    const [randomNumber, setRandomNumber] = useState(number);
     const [select, setSelect] = useState(true);
     const [job, setJob] = useState('');
     const [locy, setLocy] = useState('');
+    const [randomPack, setRandomPack] = useState(Math.floor(Math.random()*3));
+
 
     const makeArray = () => {
         for (i = 0; i < spiesNumber; i++){
@@ -34,42 +36,45 @@ const PickingScreen = props => {
             console.log('player');
             roleArray.push('player')
         }
+        number = Math.floor(Math.random()*(roleArray.length));
+        console.log(number);
     }
 
     if (firstTime) {
         makeArray();
         setFirstTime(false);
+        
     }
     if (select)
     {
-        setLocation(Movies[randomLocation][0]);
+        setLocation(currentPacks[randomPack][randomLocation][0]);
         setLocy(location);
         setRandomNumber(Math.floor(Math.random()*(roleArray.length)))
-        setRandomRole(roleArray[randomNumber]);
+        setRandomRole(roleArray[number]);
         setSelect(false);
-        console.log('random location ' + randomLocation);
     }
 
     const goToStart = () => {
         props.navigation.navigate({routeName: 'Start'})
     }
     const onReveal = () => {
-        console.log(roleArray);
         setRoleVisible(true);
-        setLocation(Movies[randomLocation][0]);
+        setLocation(currentPacks[randomPack][randomLocation][0]);
         setLocy(location);
-        setRandomJob(Math.floor(Math.random()*(Movies[randomLocation][1].length-1)));
+        setRandomJob(Math.floor(Math.random()*(currentPacks[randomPack][randomLocation][1].length-1)));
         setRandomNumber(Math.floor(Math.random()*(roleArray.length-1)));
         setRandomRole(roleArray[randomNumber]);
         roleArray.splice(randomNumber, 1);
+        console.log(roleArray);
+        console.log(randomNumber);
+        console.log('random role =' + randomRole)
         if (randomRole === 'player'){
-            setJob(Movies[randomLocation][1][randomJob])
+            setJob(currentPacks[randomPack][randomLocation][1][randomJob])
         }
         else {
             setJob(randomRole);
             setLocy('')
         }
-        console.log('random location ' + randomLocation);
     }
 
 

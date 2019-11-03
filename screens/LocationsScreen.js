@@ -52,6 +52,32 @@ const styles = StyleSheet.create({
     },
     scroll: {
         paddingTop: 40,
+    },
+    headerContainer: {
+        flexDirection: 'row',
+        paddingLeft: 10,
+        backgroundColor: '#ebebeb',
+        height: 50,
+        alignItems: 'center'
+    },
+    text: {
+        fontSize: 30,
+        lineHeight: 50,
+        textAlignVertical: 'center',
+    },
+    toggle: {
+        marginLeft: 20,
+    },
+    image: {
+        height: 30,
+        width: 30,
+        marginLeft: 'auto',
+    },
+    clickArea: {
+        height: '100%',
+        justifyContent: 'center',
+        paddingRight: 20,
+        flex: 1,
     }
 })
 

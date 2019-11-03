@@ -40,7 +40,7 @@ const MoviesPack = () => {
                 <Image resizeMode='contain' style={styles.icon} source={require('../assets/diplodocus.png')} />
                 <Text style={styles.name}>Jurassic Park</Text>
             </View>
-             </View>
+        </View>
     )
 }
 const styles = StyleSheet.create({

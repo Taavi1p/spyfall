@@ -2,7 +2,9 @@ import React, {useState} from 'react';
 import { StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import CustomHeader from '../components/CustomHeader';
 import MainButton from '../components/MainButton';
-import Pictures from '../packs/BasicPack';
+import Basics from '../packs/BasicPack';
+import Movies from '../packs/MoviesPack';
+import TVShows from '../packs/TVShowsPack';
 
 const GameScreen = props => {
     const goToStart = () => {
@@ -36,10 +38,13 @@ const GameScreen = props => {
         console.log('hahaha');
         intervally = setInterval(tick, 1000);
     }
+
+    let Pictures = <ScrollView><Basics /><Movies /><TVShows /></ScrollView>;
+
     return (
         <View style={styles.screen}>
             <CustomHeader onClick={goToStart}>end game</CustomHeader>
-             <Pictures />
+            {Pictures}
             <View style={styles.buttons}>
                <Text style={styles.time}>{timer}</Text>
                 <MainButton onClick={startClock}>Start Timer</MainButton>
@@ -51,12 +56,13 @@ const GameScreen = props => {
 const styles = StyleSheet.create({
     screen: {
         flex: 1,
-        paddingBottom: 40,
+        paddingBottom: 20,
     },
     buttons: {
         flexDirection: 'row',
         marginTop: 'auto',
         justifyContent: 'space-evenly',
+        marginTop: 20,
     },
     time: {
         fontSize: 40,
