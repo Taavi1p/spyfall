@@ -4,6 +4,9 @@ import MainButton from '../components/MainButton';
 import InputButton from '../components/InputButton';
 
 const StartScreen = props => {
+    const isBasics = props.navigation.getParam('isBasics');
+    const isMovies = props.navigation.getParam('isMovies');
+    const isTVShows = props.navigation.getParam('isTVShows');
     const [playersNumber, setPlayersNumber] = useState(5);
     const [spiesNumber, setSpiesNumber] = useState(1);
     const [spyText, setSpyText] = useState('spy');
@@ -44,10 +47,21 @@ const StartScreen = props => {
     const toRules = () => {
         props.navigation.navigate({routeName: 'Rules'})
     }
+
+    const [ErrorText, setErrorText] = useState(<View style={styles.emptyBox}></View>) ;
+
     const startGame = () => {
+        if (isBasics || isMovies || isTVShows) {
         props.navigation.navigate({routeName: 'Picking', params: {
             spyAmount: spiesNumber, playerAmount: playersNumber,
+            isBasics: isBasics, isMovies: isMovies, isTVShows: isTVShows,
+
         }})
+        setErrorText(<View style={styles.emptyBox}></View>)
+        }
+        else {
+            setErrorText(<View style={styles.errorBox}><Text style={styles.errorText}>choose locations first!</Text></View>);
+        }
     }
     const toLocation = () => {
         props.navigation.navigate({routeName: 'Locations'})
@@ -60,6 +74,11 @@ const StartScreen = props => {
             setSpyText('spy')
         }
     }
+
+    console.log(isBasics)
+    console.log(isMovies)
+    console.log(isTVShows)
+    console.log('---------StartScreen------')
 
     return (
         <View style={styles.container}>
@@ -79,6 +98,7 @@ const StartScreen = props => {
                 <MainButton onClick={toRules}>rules</MainButton>
                 <MainButton onClick={startGame}>start</MainButton>
             </View>
+            {ErrorText}
         </View>
     )
 }
@@ -86,7 +106,8 @@ const StartScreen = props => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingVertical: 100,
+        paddingBottom: 50,
+        marginTop: 80,
         paddingHorizontal: 40,
     },
     title: {
@@ -122,6 +143,21 @@ const styles = StyleSheet.create({
         justifyContent: "space-evenly",
         marginTop: 'auto',
     },
+    emptyBox: {
+        width: '100%',
+        height: 35,
+    },
+    errorBox: {
+        backgroundColor: 'grey',
+        paddingVertical: 5,
+        paddingHorizontal: 20,
+        marginTop: 20,
+    },
+    errorText: {
+        fontSize: 25,
+        color: 'white',
+        textAlign: 'center',
+    }
 })
 
 export default StartScreen;

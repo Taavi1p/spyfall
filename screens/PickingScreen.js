@@ -4,24 +4,34 @@ import CustomHeader from '../components/CustomHeader';
 import BlackBox from '../components/BlackBox';
 import Card from '../components/Card';
 import * as Animatable from 'react-native-animatable';
-import { useSelector } from 'react-redux';
-
+import Basics from '../data/basics';
+import Movies from '../data/movies';
+import TVShows from '../data/tvshows';
+// import { useSelector } from 'react-redux';
+// ------------use redux later---------------
 
 const PickingScreen = props => {
-    const currentPacks = useSelector(state => state.packs.packs)
+    // const currentPacks = useSelector(state => state.packs.packs)
     const playerNumber = props.navigation.getParam('playerAmount');
     const spiesNumber = props.navigation.getParam('spyAmount');
+    const isBasics = props.navigation.getParam('isBasics');
+    const isMovies = props.navigation.getParam('isMovies');
+    const isTVShows = props.navigation.getParam('isTVShows');
     const [roleVisible, setRoleVisible] = useState(false);
     const [randomLocation, setRandomLocation] = useState(Math.floor(Math.random()*9));
     const [location, setLocation] = useState('');
     const [playerTurn, setPlayerTurn] = useState(1);
     const [roleArray, setRoleArray] = useState([]);
-    const [randomNumber, setRandomNumber] = useState(0);
     const [select, setSelect] = useState(true);
     const [job, setJob] = useState('');
     const [locy, setLocy] = useState('');
-    const [randomPack, setRandomPack] = useState(Math.floor(Math.random()*3));
+    const [locationArray, setLocationArray] = useState([]);
+    const [randomPack, setRandomPack] = useState(Math.floor(Math.random()*(locationArray.length + 1)));
 
+    console.log(isBasics)
+    console.log(isMovies)
+    console.log(isTVShows)
+    console.log('---------PickingScreen------')
 
     const makeArray = () => {
         console.log('----------New Game-------------')
@@ -34,22 +44,32 @@ const PickingScreen = props => {
             let generator = Math.floor(Math.random()*(roleArray.length + 1));
             roleArray.splice(generator, 0, 'spy')
         }
-        console.log(roleArray)
+        console.log(roleArray);
+        
+        if (isBasics) {
+            locationArray.push(Basics)
+        }
+        if (isMovies) {
+            locationArray.push(Movies)
+        }
+        if (isTVShows) {
+            locationArray.push(TVShows)
+        }
     }
 
     if (select)
     {
         makeArray();
-        setLocation(currentPacks[randomPack][randomLocation][0]);
+        setLocation(locationArray[randomPack][randomLocation][0]);
         setLocy(location);
         setSelect(false);
     }
 
     const onReveal = () => {
         setRoleVisible(true);
-        setLocation(currentPacks[randomPack][randomLocation][0]);
+        setLocation(locationArray[randomPack][randomLocation][0]);
         setLocy(location);
-        setJob(currentPacks[randomPack][randomLocation][1][Math.floor(Math.random()*(currentPacks[randomPack][randomLocation][1].length-1))]);
+        setJob(locationArray[randomPack][randomLocation][1][Math.floor(Math.random()*(locationArray[randomPack][randomLocation][1].length-1))]);
         
         if (roleArray[0] === 'spy'){
             setJob('you\'re the spy');
@@ -69,7 +89,9 @@ const PickingScreen = props => {
             setPlayerTurn(playerTurn + 1);
         }
         else if (roleArray.length === 0) {
-            props.navigation.navigate({routeName: 'Game'})
+            props.navigation.navigate({routeName: 'Game', params: {
+                isBasics: isBasics, isMovies: isMovies, isTVShows: isTVShows,
+            }})
         }
     }
 
