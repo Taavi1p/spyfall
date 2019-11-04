@@ -18,6 +18,26 @@ const Card = props => {
     else if (props.location === 'coal mine') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/mining.png')} />;}
     else if (props.location === 'casino') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/dices.png')} />;}
 
+    else if (props.location === 'Avengers') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/avengers.png')} />;}
+    else if (props.location === 'Monsters Inc') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/monster.png')} />;}
+    else if (props.location === 'Nemo') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/fish.png')} />;}
+    else if (props.location === 'Titanic') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/cruise.png')} />;}
+    else if (props.location === 'Shrek') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/shreky.png')} />;}
+    else if (props.location === 'Harry Potter') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/golden-snitch.png')} />;}
+    else if (props.location === 'Star Wars') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/death-star.png')} />;}
+    else if (props.location === 'Justice League') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/batman.png')} />;}
+    else if (props.location === 'Toy story') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/toys.png')} />;}
+
+    else if (props.location === 'The Simpsons') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/bart.png')} />;}
+    else if (props.location === 'The Big Bang Theory') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/big-bang-theory.png')} />;}
+    else if (props.location === 'Friends') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/coffee.png')} />;}
+    else if (props.location === 'Game of Thrones') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/dragon.png')} />;}
+    else if (props.location === 'The Office') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/office.png')} />;}
+    else if (props.location === 'Family Guy') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/peter.png')} />;}
+    else if (props.location === 'How I met your mother') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/umbrella.png')} />;}
+    else if (props.location === 'South Park') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/mountain.png')} />;}
+    else if (props.location === 'The Walking Dead') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/zombie.png')} />;}
+
     return (
         <View>
             <View style={styles.card}>

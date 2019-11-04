@@ -21,8 +21,8 @@ const MoviesPack = () => {
                 <Text style={styles.name}>Titanic</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/hunger-games.png')} />
-                <Text style={styles.name}>Hunger Games</Text>
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/shreky.png')} />
+                <Text style={styles.name}>Shrek</Text>
             </View>
              <View>
                 <Image resizeMode='contain' style={styles.icon} source={require('../assets/golden-snitch.png')} />
@@ -34,11 +34,11 @@ const MoviesPack = () => {
             </View>
              <View>
                 <Image resizeMode='contain' style={styles.icon} source={require('../assets/batman.png')} />
-                <Text style={styles.name}>Batman</Text>
+                <Text style={styles.name}>Justice League</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/diplodocus.png')} />
-                <Text style={styles.name}>Jurassic Park</Text>
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/toys.png')} />
+                <Text style={styles.name}>Toy Story</Text>
             </View>
         </View>
     )

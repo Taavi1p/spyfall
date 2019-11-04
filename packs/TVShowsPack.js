@@ -25,20 +25,20 @@ const TVShowsPack = () => {
                 <Text style={styles.name}>The Office</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/pokeball.png')} />
-                <Text style={styles.name}>Pokemon</Text>
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/peter.png')} />
+                <Text style={styles.name}>Family Guy</Text>
             </View>
              <View>
                 <Image resizeMode='contain' style={styles.icon} source={require('../assets/umbrella.png')} />
                 <Text style={styles.name}>How I met your mother</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/hospital.png')} />
-                <Text style={styles.name}>Grey's Anatomy</Text>
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/mountain.png')} />
+                <Text style={styles.name}>South Park</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/breaking.png')} />
-                <Text style={styles.name}>Breaking Bad</Text>
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/zombie.png')} />
+                <Text style={styles.name}>Walking Dead</Text>
             </View>
         </View>
    
