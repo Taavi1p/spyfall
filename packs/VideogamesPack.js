@@ -33,7 +33,7 @@ const BasicPack2 = () => {
                 <Text style={styles.name}>sims</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/amgry-bird.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/angry-bird.png')} />
                 <Text style={styles.name}>angry birds</Text>
             </View>
              <View>

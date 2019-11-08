@@ -25,14 +25,14 @@ const LocationScreen = props => {
     }
     const [isBasics, setIsBasics] = useState(true); 
     const [isBasics2, setIsBasics2] = useState(true);
-    const [isBasics3, setIsBasics3] = useState(true);
-    const [isBasics4, setIsBasics4] = useState(true);
-    const [isExotic, setIsExotic] = useState(true);
-    const [isExotic2, setIsExotic2] = useState(true);
+    const [isBasics3, setIsBasics3] = useState(false);
+    const [isBasics4, setIsBasics4] = useState(false);
+    const [isExotic, setIsExotic] = useState(false);
+    const [isExotic2, setIsExotic2] = useState(false);
     const [isMovies, setIsMovies] = useState(false); //useSelector(state => state.packs.isMovies);
-    const [isTown, setIsTown] = useState(true);
+    const [isTown, setIsTown] = useState(false);
     const [isTVShows, setIsTVShows] = useState(false);
-    const [isVideogames, setIsVideogames] = useState(true);
+    const [isVideogames, setIsVideogames] = useState(false);
     const Basics = <BasicPack />;
     const Basics2 = <BasicPack2 />;
     const Basics3 = <BasicPack3 />;
@@ -65,7 +65,7 @@ const LocationScreen = props => {
     const changeBasics3 = () => {
         setIsOpenBasic3(!isOpenBasics3);
     }
-    const changeBasics2 = () => {
+    const changeBasics4 = () => {
         setIsOpenBasic4(!isOpenBasics4);
     }
     const changeExotic = () => {
