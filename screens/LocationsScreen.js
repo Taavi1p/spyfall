@@ -3,9 +3,15 @@ import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import CustomHeader from '../components/CustomHeader';
 import BasicPack from '../packs/BasicPack';
 import BasicPack2 from '../packs/BasicPack2';
+import BasicPack3 from '../packs/BasicPack3';
+import BasicPack4 from '../packs/BasicPack4';
+import ExcoticPack from '../packs/ExoticPack';
+import ExcoticPack2 from '../packs/ExoticPack2';
 import MoviesPack from '../packs/MoviesPack';
+import TownPacks from '../packs/TownPack'
 import TVShowsPack from '../packs/TVShowsPack';
 import LocationHeader from '../components/LocationHeader';
+import VideogamesPack from '../packs/VideogamesPack';
 //import { useSelector } from 'react-redux';
 // ------use redux later-------------------
 
@@ -13,24 +19,42 @@ const LocationScreen = props => {
 
     const goToStart = () => {
         props.navigation.navigate({routeName: 'Start', params: {
-            isBasics: isBasics, isBasics2: isBasics2, isMovies: isMovies, isTVShows: isTVShows,
+            isBasics: isBasics, isBasics2: isBasics2, sBasics3: isBasics3, sBasics4: isBasics4, 
+            isExotic: isExotic, isExotic2: isExotic2, isTown: isTown, isVideogames: isVideogames, isMovies: isMovies, isTVShows: isTVShows,
         }})
     }
     const [isBasics, setIsBasics] = useState(true); 
     const [isBasics2, setIsBasics2] = useState(true);
+    const [isBasics3, setIsBasics3] = useState(true);
+    const [isBasics4, setIsBasics4] = useState(true);
+    const [isExotic, setIsExotic] = useState(true);
+    const [isExotic2, setIsExotic2] = useState(true);
     const [isMovies, setIsMovies] = useState(false); //useSelector(state => state.packs.isMovies);
+    const [isTown, setIsTown] = useState(true);
     const [isTVShows, setIsTVShows] = useState(false);
+    const [isVideogames, setIsVideogames] = useState(true);
     const Basics = <BasicPack />;
     const Basics2 = <BasicPack2 />;
+    const Basics3 = <BasicPack3 />;
+    const Basics4 = <BasicPack4 />;
+    const Exotic = <ExcoticPack />
+    const Exotic2 = <ExcoticPack2 />
     const Movies = <MoviesPack />;
+    const Town = <TownPacks />
     const TVShows = <TVShowsPack />;
     const Nothing = <View></View>;
+    const Videogames = <VideogamesPack />
     
     const [isOpenBasics, setIsOpenBasic] = useState(true);
     const [isOpenBasics2, setIsOpenBasic2] = useState(false);
+    const [isOpenBasics3, setIsOpenBasic3] = useState(false);
+    const [isOpenBasics4, setIsOpenBasic4] = useState(false);
+    const [isOpenExotic, setIsOpenExotic] = useState(false);
+    const [isOpenExotic2, setIsOpenExotic2] = useState(false);
     const [isOpenMovies, setIsOpenMovies] = useState(false);
+    const [isOpenTown, setIsOpenTown] = useState(false);
     const [isOpenTVShows, setIsOpenTVShows] = useState(false);
-
+    const [isOpenVideogames, setIsOpenVideogames] = useState(false);
 
     const changeBasics = () => {
         setIsOpenBasic(!isOpenBasics);
@@ -38,24 +62,60 @@ const LocationScreen = props => {
     const changeBasics2 = () => {
         setIsOpenBasic2(!isOpenBasics2);
     }
+    const changeBasics3 = () => {
+        setIsOpenBasic3(!isOpenBasics3);
+    }
+    const changeBasics2 = () => {
+        setIsOpenBasic4(!isOpenBasics4);
+    }
+    const changeExotic = () => {
+        setIsOpenExotic(!isOpenExotic);
+    }
+    const changeExotic2 = () => {
+        setIsOpenExotic2(!isOpenExotic2);
+    }
     const changeMovies = () => {
         setIsOpenMovies(!isOpenMovies);
     }
+    const changeTown = () => {
+        setIsOpenTown(!isOpenTown);
+    }
     const changeTVShows = () => {
         setIsOpenTVShows(!isOpenTVShows);
+    }
+    const changeVideogames = () => {
+        setIsOpenVideogames(!isOpenVideogames);
     }
 
     const toggleBasics = () => {
         setIsBasics(!isBasics);
     }
     const toggleBasics2 = () => {
-        setIsBasics2(!isBasics);
+        setIsBasics2(!isBasics2);
+    }
+    const toggleBasics3 = () => {
+        setIsBasics3(!isBasics3);
+    }
+    const toggleBasics4 = () => {
+        setIsBasics4(!isBasics4);
+    }
+    const toggleExotic = () => {
+        setIsExotic(!isExotic);
+    }
+    const toggleExotic2 = () => {
+        setIsExotic2(!isExotic2);
     }
     const toggleMovies = () => {
         setIsMovies(!isMovies);
     }
+    const toggleTown = () => {
+        setIsTown(!isTown);
+    }
     const toggleTVShows = () => {
         setIsTVShows(!isTVShows);
+    }
+    const toggleVideogames = () => {
+        setIsVideogames(!isVideogames);
     }
     // console.log(isBasics)
     // console.log(isMovies)
@@ -71,10 +131,22 @@ const LocationScreen = props => {
                     {isOpenBasics ? Basics : Nothing}
                     <LocationHeader value={isBasics2} onToggle={toggleBasics2} onClick={changeBasics2}>Basic 2</LocationHeader>
                     {isOpenBasics2 ? Basics2 : Nothing}
+                    <LocationHeader value={isBasics3} onToggle={toggleBasics3} onClick={changeBasics3}>Basic 3</LocationHeader>
+                    {isOpenBasics3 ? Basics3 : Nothing}
+                    <LocationHeader value={isBasics4} onToggle={toggleBasics4} onClick={changeBasics4}>Basic 4</LocationHeader>
+                    {isOpenBasics4 ? Basics4 : Nothing}
+                    <LocationHeader value={isExotic} onToggle={toggleExotic} onClick={changeExotic}>Exotic</LocationHeader>
+                    {isOpenExotic ? Exotic : Nothing}
+                    <LocationHeader value={isExotic2} onToggle={toggleExotic2} onClick={changeExotic2}>Exotic 2</LocationHeader>
+                    {isOpenExotic2 ? Exotic2 : Nothing}
+                    <LocationHeader value={isTown} onToggle={toggleTown} onClick={changeTown}>Town</LocationHeader>
+                    {isOpenTown ? Town : Nothing }
                     <LocationHeader value={isMovies} onToggle={toggleMovies} onClick={changeMovies}>Movies</LocationHeader>
                     {isOpenMovies ? Movies : Nothing}
                     <LocationHeader value={isTVShows} onToggle={toggleTVShows} onClick={changeTVShows}>TV Shows</LocationHeader>
                     {isOpenTVShows ? TVShows : Nothing}
+                    <LocationHeader value={isVideogames} onToggle={toggleVideogames} onClick={changeVideogames}>Exotic</LocationHeader>
+                    {isOpenVideogames ? Videogames : Nothing }
                 </View>
             </ScrollView>
         </View>
