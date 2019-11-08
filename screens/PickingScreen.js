@@ -5,6 +5,7 @@ import BlackBox from '../components/BlackBox';
 import Card from '../components/Card';
 import * as Animatable from 'react-native-animatable';
 import Basics from '../data/basics';
+import Basics2 from '../data/basics2';
 import Movies from '../data/movies';
 import TVShows from '../data/tvshows';
 // import { useSelector } from 'react-redux';
@@ -15,6 +16,7 @@ const PickingScreen = props => {
     const playerNumber = props.navigation.getParam('playerAmount');
     const spiesNumber = props.navigation.getParam('spyAmount');
     const isBasics = props.navigation.getParam('isBasics');
+    const isBasics2 = props.navigation.getParam('isBasics2');
     const isMovies = props.navigation.getParam('isMovies');
     const isTVShows = props.navigation.getParam('isTVShows');
     const [roleVisible, setRoleVisible] = useState(false);
@@ -28,10 +30,10 @@ const PickingScreen = props => {
     const [locationArray, setLocationArray] = useState([]);
     const [randomPack, setRandomPack] = useState(Math.floor(Math.random()*(locationArray.length + 1)));
 
-    console.log(isBasics)
-    console.log(isMovies)
-    console.log(isTVShows)
-    console.log('---------PickingScreen------')
+    // console.log(isBasics)
+    // console.log(isMovies)
+    // console.log(isTVShows)
+    // console.log('---------PickingScreen------')
 
     const makeArray = () => {
         console.log('----------New Game-------------')
@@ -48,6 +50,9 @@ const PickingScreen = props => {
         
         if (isBasics) {
             locationArray.push(Basics)
+        }
+        if (isBasics2) {
+            locationArray.push(Basics2)
         }
         if (isMovies) {
             locationArray.push(Movies)
@@ -90,7 +95,7 @@ const PickingScreen = props => {
         }
         else if (roleArray.length === 0) {
             props.navigation.navigate({routeName: 'Game', params: {
-                isBasics: isBasics, isMovies: isMovies, isTVShows: isTVShows,
+                isBasics: isBasics, isBasics2: isBasics2, isMovies: isMovies, isTVShows: isTVShows,
             }})
         }
     }

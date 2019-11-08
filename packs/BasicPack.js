@@ -22,7 +22,7 @@ const BasicPack = () => {
             </View>
              <View>
                 <Image resizeMode='contain' style={styles.icon} source={require('../assets/mining.png')} />
-                <Text style={styles.name}>cole mine</Text>
+                <Text style={styles.name}>coal mine</Text>
             </View>
              <View>
                 <Image resizeMode='contain' style={styles.icon} source={require('../assets/roller-coaster.png')} />

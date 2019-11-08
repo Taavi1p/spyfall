@@ -10,7 +10,7 @@
     ],
     "version": "2.0.0",
     "orientation": "portrait",
-    "icon": "./assets/spy.png",
+    "icon": "./assets/ios-icon.png",
     "splash": {
       "image": "./assets/spy-splash.png",
       "resizeMode": "contain",

@@ -5,6 +5,7 @@ import InputButton from '../components/InputButton';
 
 const StartScreen = props => {
     const isBasics = props.navigation.getParam('isBasics');
+    const isBasics2 = props.navigation.getParam('isBasics2');
     const isMovies = props.navigation.getParam('isMovies');
     const isTVShows = props.navigation.getParam('isTVShows');
     const [playersNumber, setPlayersNumber] = useState(5);
@@ -51,10 +52,10 @@ const StartScreen = props => {
     const [ErrorText, setErrorText] = useState(<View style={styles.emptyBox}></View>) ;
 
     const startGame = () => {
-        if (isBasics || isMovies || isTVShows) {
+        if (isBasics || isBasics2 || isMovies || isTVShows) {
         props.navigation.navigate({routeName: 'Picking', params: {
             spyAmount: spiesNumber, playerAmount: playersNumber,
-            isBasics: isBasics, isMovies: isMovies, isTVShows: isTVShows,
+            isBasics: isBasics, isBasics2: isBasics2, isMovies: isMovies, isTVShows: isTVShows,
 
         }})
         setErrorText(<View style={styles.emptyBox}></View>)
@@ -75,10 +76,10 @@ const StartScreen = props => {
         }
     }
 
-    console.log(isBasics)
-    console.log(isMovies)
-    console.log(isTVShows)
-    console.log('---------StartScreen------')
+    // console.log(isBasics)
+    // console.log(isMovies)
+    // console.log(isTVShows)
+    // console.log('---------StartScreen------')
 
     return (
         <View style={styles.container}>

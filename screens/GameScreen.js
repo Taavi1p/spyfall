@@ -3,26 +3,42 @@ import { StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import CustomHeader from '../components/CustomHeader';
 import MainButton from '../components/MainButton';
 import Basics from '../packs/BasicPack';
+import Basics2 from '../packs/BasicPack2';
 import Movies from '../packs/MoviesPack';
 import TVShows from '../packs/TVShowsPack';
 // import { useSelector } from 'react-redux';
 // ---------use Redux later-----------------
 
+let isTicking = false;
+let time = 479;
+
 const GameScreen = props => {
     const goToStart = () => {
+        isTicking = false;
+        time = 479;
         props.navigation.navigate({routeName: 'Start'})
     }
     const isBasics = props.navigation.getParam('isBasics');
+    const isBasics2 = props.navigation.getParam('isBasics2');
     const isMovies = props.navigation.getParam('isMovies');
     const isTVShows = props.navigation.getParam('isTVShows');
-    // const isBasics = useSelector(state => state.packs.isBasics);
-    // const isMovies = useSelector(state => state.packs.isMovies);
-    // const isTVShows = useSelector(state => state.packs.isTVShows);
+    let TimeButton;
     let intervally;
     const [timer, setTimer] = useState('8:00');
-    let time = 479;
+
+    const pauseTimer = () => {
+        console.log('pausing the timer');
+        isTicking = false
+    }
+
+    const startTimer = () => {
+        console.log('starting the timer');
+        intervally = setInterval(tick, 1000);
+        isTicking = true;
+    }
+
+
     const tick = () => {
-        console.log(time);
     
         let min = Math.floor(time / 60);
         let sec = time - (min * 60);
@@ -34,6 +50,11 @@ const GameScreen = props => {
 
         if (min === 0 && sec == '00'){
             console.log('clear');
+            clearInterval(intervally);
+        }
+
+        if(isTicking === false) {
+            console.log('pause the clock');
             clearInterval(intervally)
         }
     
@@ -41,21 +62,23 @@ const GameScreen = props => {
         time--;
     
     }
-
-    console.log(isBasics)
-    console.log(isMovies)
-    console.log(isTVShows)
-
-    const startClock = () => {
-        console.log('hahaha');
-        intervally = setInterval(tick, 1000);
-    }
+    
+   if (isTicking === false) {
+    TimeButton = <MainButton onClick={startTimer}>Start Timer</MainButton>;
+   }
+   else if (isTicking === true) {
+    TimeButton = <MainButton onClick={pauseTimer}>Pause Timer</MainButton>
+   }
+    
     let BasicPics = <View></View>;
     let MoviePics;
     let TVShowPics;
     
     if (isBasics) {
         BasicPics = <Basics />
+    }
+    if (isBasics2) {
+        BasicPics2 = <Basics2 />
     }
     if (isMovies) {
         MoviePics = <Movies />
@@ -70,12 +93,13 @@ const GameScreen = props => {
             <CustomHeader onClick={goToStart}>end game</CustomHeader>
             <ScrollView>
             {BasicPics}
+            {BasicPics2}
             {MoviePics}
             {TVShowPics}
             </ScrollView>
             <View style={styles.buttons}>
                <Text style={styles.time}>{timer}</Text>
-                <MainButton onClick={startClock}>Start Timer</MainButton>
+               {TimeButton}
             </View>
         </View>
     )
@@ -89,7 +113,8 @@ const styles = StyleSheet.create({
     buttons: {
         flexDirection: 'row',
         marginTop: 'auto',
-        justifyContent: 'space-evenly',
+        paddingHorizontal: 30,
+        justifyContent: 'space-between',
         marginTop: 20,
     },
     time: {
