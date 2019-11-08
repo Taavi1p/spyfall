@@ -5,39 +5,39 @@ const BasicPack2 = () => {
     return (
         <View style={styles.container}>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/resturant.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/hawaii.png')} />
                 <Text style={styles.name}>hawaii</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/police.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/everest.png')} />
                 <Text style={styles.name}>mount everest</Text>
              </View>
              <View>                
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/cemetery.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/pyramids.png')} />
                 <Text style={styles.name}>pyramids of egipt</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/party.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/louvre.png')} />
                 <Text style={styles.name}>louvre museum</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/theatre.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/colosseum.png')} />
                 <Text style={styles.name}>colosseum</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/old.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/disneyland.png')} />
                 <Text style={styles.name}>disney land</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/book.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/great-wall.png')} />
                 <Text style={styles.name}>great wall of china</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/submarine.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/taj-mahal.png')} />
                 <Text style={styles.name}>taj mahal</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/satellite.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/water.png')} />
                 <Text style={styles.name}>niagra falls</Text>
             </View>
         </View>
