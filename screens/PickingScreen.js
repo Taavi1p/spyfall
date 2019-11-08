@@ -6,7 +6,12 @@ import Card from '../components/Card';
 import * as Animatable from 'react-native-animatable';
 import Basics from '../data/basics';
 import Basics2 from '../data/basics2';
+import Basics3 from '../data/basics3';
+import Basics4 from '../data/basics4';
+import Exotic from '../data/exotic';
+import Exotic2 from '../data/exotic2';
 import Movies from '../data/movies';
+import Town from '../data/town';
 import TVShows from '../data/tvshows';
 // import { useSelector } from 'react-redux';
 // ------------use redux later---------------
@@ -60,11 +65,29 @@ const PickingScreen = props => {
         if (isBasics2) {
             locationArray.push(Basics2)
         }
+        if (isBasics3) {
+            locationArray.push(Basics3)
+        }
+        if (isBasics4) {
+            locationArray.push(Basics4)
+        }
+        if (isExotic) {
+            locationArray.push(Exotic)
+        }
+        if (isExotic2) {
+            locationArray.push(Exotic2)
+        }
         if (isMovies) {
             locationArray.push(Movies)
         }
+        if (isTown) {
+            locationArray.push(Town)
+        }
         if (isTVShows) {
             locationArray.push(TVShows)
+        }
+        if (isVideogames) {
+            locationArray.push(Videogames)
         }
     }
 

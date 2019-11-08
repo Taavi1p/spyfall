@@ -58,7 +58,7 @@ const StartScreen = props => {
     const [ErrorText, setErrorText] = useState(<View style={styles.emptyBox}></View>) ;
 
     const startGame = () => {
-        if (isBasics || isBasics2 || isMovies || isTVShows) {
+        if (isBasics || isBasics2 || isBasics3 || isBasics4 || isExotic || isExotic2 || isMovies || isTown || isVideogames ) {
         props.navigation.navigate({routeName: 'Picking', params: {
             spyAmount: spiesNumber, playerAmount: playersNumber,
             isBasics: isBasics, isBasics2: isBasics2, isMovies: isMovies, isTVShows: isTVShows,
