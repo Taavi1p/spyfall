@@ -5,15 +5,15 @@ export default [
     ],
     [
         'Burj Khalifa',
-        ['business man', '']
+        ['business man', 'receptionist', 'apartment owner', 'hotel manager', 'tourist', 'american tourist']
     ],
     [
         'Las Vegas',
-        ['gambler', 'casino manager']
+        ['gambler', 'casino manager', 'singer', 'acrobatic performer', 'european tourist']
     ],
     [
         'Eiffel Tower',
-        ['tourist', 'ticket seller', 'local frenchman']
+        ['tourist', 'ticket seller', 'local frenchman', 'apartment owner', 'guide']
     ],
     [
         'Times Square',
@@ -25,14 +25,14 @@ export default [
     ],
     [
         'Vatican City',
-        ['the Pope', 'Priest', 'tourist', 'guide']
+        ['the Pope', 'Priest', 'tourist', 'guide', 'religious person', 'guide', 'guard']
     ],
     [
         'Sydney Opera House',
-        ['tourist', 'opera singer', 'violinist']
+        ['tourist', 'opera singer', 'violinist', 'audience member', 'Pianist', 'conductor', 'saxophonist' ]
     ],
     [
         'The White House',
-        ['the president', 'the vice president']
+        ['the president', 'the vice president', 'secretary of state', 'janitor', 'protestor', 'the first lady', 'secret service', 'presidents cook']
     ]
 ]
