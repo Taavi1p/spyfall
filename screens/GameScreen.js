@@ -4,8 +4,14 @@ import CustomHeader from '../components/CustomHeader';
 import MainButton from '../components/MainButton';
 import Basics from '../packs/BasicPack';
 import Basics2 from '../packs/BasicPack2';
+import Basics3 from '../packs/BasicPack3';
+import Basics4 from '../packs/BasicPack4';
+import Exotic from '../packs/ExoticPack';
+import Exotic2 from '../packs/ExoticPack2';
+import Town from '../packs/TownPack';
 import Movies from '../packs/MoviesPack';
 import TVShows from '../packs/TVShowsPack';
+import Videogames from '../packs/VideogamesPack';
 // import { useSelector } from 'react-redux';
 // ---------use Redux later-----------------
 
@@ -22,6 +28,12 @@ const GameScreen = props => {
     const isBasics2 = props.navigation.getParam('isBasics2');
     const isMovies = props.navigation.getParam('isMovies');
     const isTVShows = props.navigation.getParam('isTVShows');
+    const isBasics3 = props.navigation.getParam('isBasics3');
+    const isBasics4 = props.navigation.getParam('isBasics4');
+    const isExotic = props.navigation.getParam('isExotic');
+    const isExotic2 = props.navigation.getParam('isExotic2');
+    const isTown = props.navigation.getParam('isTown');
+    const isVideogames = props.navigation.getParam('isVideoGames');
     let TimeButton;
     let intervally;
     const [timer, setTimer] = useState('8:00');
@@ -70,7 +82,7 @@ const GameScreen = props => {
     TimeButton = <MainButton onClick={pauseTimer}>Pause Timer</MainButton>
    }
     
-    let BasicPics = <View></View>;
+    let BasicPics;
     let MoviePics;
     let TVShowPics;
     
@@ -79,6 +91,24 @@ const GameScreen = props => {
     }
     if (isBasics2) {
         BasicPics2 = <Basics2 />
+    }
+    if (isBasics3) {
+        BasicPics3 = <Basics3 />
+    }
+    if (isBasics4) {
+        BasicPics4 = <Basics4 />
+    }
+    if (isExotic) {
+        Exotic = <Exotic />
+    }
+    if (isExotic2) {
+        Exotic2 = <Exotic2 />
+    }
+    if (isTown) {
+        Town = <Town />
+    }
+    if (isVideogames) {
+        Videogames = <Videogames />
     }
     if (isMovies) {
         MoviePics = <Movies />

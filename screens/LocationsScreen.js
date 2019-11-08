@@ -19,7 +19,7 @@ const LocationScreen = props => {
 
     const goToStart = () => {
         props.navigation.navigate({routeName: 'Start', params: {
-            isBasics: isBasics, isBasics2: isBasics2, sBasics3: isBasics3, sBasics4: isBasics4, 
+            isBasics: isBasics, isBasics2: isBasics2, isBasics3: isBasics3, isBasics4: isBasics4, 
             isExotic: isExotic, isExotic2: isExotic2, isTown: isTown, isVideogames: isVideogames, isMovies: isMovies, isTVShows: isTVShows,
         }})
     }

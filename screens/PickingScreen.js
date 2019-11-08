@@ -19,6 +19,12 @@ const PickingScreen = props => {
     const isBasics2 = props.navigation.getParam('isBasics2');
     const isMovies = props.navigation.getParam('isMovies');
     const isTVShows = props.navigation.getParam('isTVShows');
+    const isBasics3 = props.navigation.getParam('isBasics3');
+    const isBasics4 = props.navigation.getParam('isBasics4');
+    const isExotic = props.navigation.getParam('isExotic');
+    const isExotic2 = props.navigation.getParam('isExotic2');
+    const isTown = props.navigation.getParam('isTown');
+    const isVideogames = props.navigation.getParam('isVideoGames');
     const [roleVisible, setRoleVisible] = useState(false);
     const [randomLocation, setRandomLocation] = useState(Math.floor(Math.random()*9));
     const [location, setLocation] = useState('');
@@ -96,6 +102,9 @@ const PickingScreen = props => {
         else if (roleArray.length === 0) {
             props.navigation.navigate({routeName: 'Game', params: {
                 isBasics: isBasics, isBasics2: isBasics2, isMovies: isMovies, isTVShows: isTVShows,
+                isExotic: isExotic, isExotic2: isExotic2, isTown: isTown, isVideogames: isVideogames,
+                isBasics3: isBasics3, isBasics4: isBasics4,
+
             }})
         }
     }

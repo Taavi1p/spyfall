@@ -6,6 +6,12 @@ import InputButton from '../components/InputButton';
 const StartScreen = props => {
     const isBasics = props.navigation.getParam('isBasics');
     const isBasics2 = props.navigation.getParam('isBasics2');
+    const isBasics3 = props.navigation.getParam('isBasics3');
+    const isBasics4 = props.navigation.getParam('isBasics4');
+    const isExotic = props.navigation.getParam('isExotic');
+    const isExotic2 = props.navigation.getParam('isExotic2');
+    const isTown = props.navigation.getParam('isTown');
+    const isVideogames = props.navigation.getParam('isVideoGames');
     const isMovies = props.navigation.getParam('isMovies');
     const isTVShows = props.navigation.getParam('isTVShows');
     const [playersNumber, setPlayersNumber] = useState(5);
@@ -56,6 +62,8 @@ const StartScreen = props => {
         props.navigation.navigate({routeName: 'Picking', params: {
             spyAmount: spiesNumber, playerAmount: playersNumber,
             isBasics: isBasics, isBasics2: isBasics2, isMovies: isMovies, isTVShows: isTVShows,
+            isExotic: isExotic, isExotic2: isExotic2, isTown: isTown, isVideogames: isVideogames,
+            isBasics3: isBasics3, isBasics4: isBasics4
 
         }})
         setErrorText(<View style={styles.emptyBox}></View>)
