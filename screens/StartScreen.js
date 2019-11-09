@@ -11,7 +11,7 @@ const StartScreen = props => {
     const isExotic = props.navigation.getParam('isExotic');
     const isExotic2 = props.navigation.getParam('isExotic2');
     const isTown = props.navigation.getParam('isTown');
-    const isVideogames = props.navigation.getParam('isVideoGames');
+    const isVideogames = props.navigation.getParam('isVideogames');
     const isMovies = props.navigation.getParam('isMovies');
     const isTVShows = props.navigation.getParam('isTVShows');
     const [playersNumber, setPlayersNumber] = useState(5);
