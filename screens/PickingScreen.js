@@ -29,7 +29,7 @@ const PickingScreen = props => {
     const isExotic = props.navigation.getParam('isExotic');
     const isExotic2 = props.navigation.getParam('isExotic2');
     const isTown = props.navigation.getParam('isTown');
-    const isVideogames = props.navigation.getParam('isVideoGames');
+    const isVideogames = props.navigation.getParam('isVideogames');
     const [roleVisible, setRoleVisible] = useState(false);
     const [randomLocation, setRandomLocation] = useState(Math.floor(Math.random()*9));
     const [location, setLocation] = useState('');
@@ -143,6 +143,9 @@ const PickingScreen = props => {
         Content = <BlackBox onClick={onReveal} />;
         gotIt = <Animatable.View animation="fadeIn" duration={2200} delay={2400} style={{width: '100%', height: 60}}></Animatable.View>
     }
+
+    console.log(isMovies);
+    console.log(isVideogames);
 
     return (
         <View style={{flex: 1}}>

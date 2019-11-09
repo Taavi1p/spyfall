@@ -121,6 +121,8 @@ const LocationScreen = props => {
     // console.log(isMovies)
     // console.log(isTVShows)
     // console.log('---------changed------')
+    console.log(isMovies);
+    console.log(isVideogames);
 
     return (
         <View style={styles.container}>

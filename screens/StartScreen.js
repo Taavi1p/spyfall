@@ -84,10 +84,8 @@ const StartScreen = props => {
         }
     }
 
-    // console.log(isBasics)
-    // console.log(isMovies)
-    // console.log(isTVShows)
-    // console.log('---------StartScreen------')
+    console.log(isMovies);
+    console.log(isVideogames);
 
     return (
         <View style={styles.container}>
