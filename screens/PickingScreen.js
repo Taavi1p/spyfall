@@ -13,6 +13,7 @@ import Exotic2 from '../data/exotic2';
 import Movies from '../data/movies';
 import Town from '../data/town';
 import TVShows from '../data/tvshows';
+import Videogames from '../data/videogames';
 // import { useSelector } from 'react-redux';
 // ------------use redux later---------------
 
