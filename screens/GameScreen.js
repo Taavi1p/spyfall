@@ -83,8 +83,15 @@ const GameScreen = props => {
    }
     
     let BasicPics;
+    let BasicPics2;
+    let BasicPics3;
+    let BasicPics4;
+    let ExoticPics;
+    let ExoticPics2;
     let MoviePics;
+    let TownPics;
     let TVShowPics;
+    let VideogamesPics;
     
     if (isBasics) {
         BasicPics = <Basics />
@@ -124,8 +131,14 @@ const GameScreen = props => {
             <ScrollView>
             {BasicPics}
             {BasicPics2}
+            {BasicPics3}
+            {BasicPics4}
+            {ExoticPics}
+            {ExoticPics2}
             {MoviePics}
+            {TownPics}
             {TVShowPics}
+            {VideogamesPics}
             </ScrollView>
             <View style={styles.buttons}>
                <Text style={styles.time}>{timer}</Text>

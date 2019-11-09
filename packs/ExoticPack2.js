@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import exotic2 from '../data/exotic2';
 
-const BasicPack2 = () => {
+const Exotic2 = () => {
     return (
         <View style={styles.container}>
              <View>
@@ -62,4 +63,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default BasicPack2;
+export default exotic2;
