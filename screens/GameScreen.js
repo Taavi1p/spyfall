@@ -7,7 +7,7 @@ import Basics2 from '../packs/BasicPack2';
 import Basics3 from '../packs/BasicPack3';
 import Basics4 from '../packs/BasicPack4';
 import Exotic from '../packs/ExoticPack';
-import Exotic2 from '../packs/ExoticPack';
+import Exotic2 from '../packs/ExoticPack2';
 import Town from '../packs/TownPack';
 import Movies from '../packs/MoviesPack';
 import TVShows from '../packs/TVShowsPack';
