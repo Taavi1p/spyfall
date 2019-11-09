@@ -33,7 +33,7 @@ const GameScreen = props => {
     const isExotic = props.navigation.getParam('isExotic');
     const isExotic2 = props.navigation.getParam('isExotic2');
     const isTown = props.navigation.getParam('isTown');
-    const isVideogames = props.navigation.getParam('isVideoGames');
+    const isVideogames = props.navigation.getParam('isVideogames');
     let TimeButton;
     let intervally;
     const [timer, setTimer] = useState('8:00');
@@ -123,6 +123,9 @@ const GameScreen = props => {
     if (isTVShows) {
         TVShowPics = <TVShows />
     }
+
+    console.log(isMovies);
+    console.log(isVideogames);
 
 
     return (
