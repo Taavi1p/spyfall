@@ -7,7 +7,7 @@ import Basics2 from '../packs/BasicPack2';
 import Basics3 from '../packs/BasicPack3';
 import Basics4 from '../packs/BasicPack4';
 import Exotic from '../packs/ExoticPack';
-import Exotic2 from '../packs/ExoticPack2';
+import Exotic2 from '../packs/ExoticPack';
 import Town from '../packs/TownPack';
 import Movies from '../packs/MoviesPack';
 import TVShows from '../packs/TVShowsPack';
@@ -106,16 +106,16 @@ const GameScreen = props => {
         BasicPics4 = <Basics4 />
     }
     if (isExotic) {
-        Exotic = <Exotic />
+        ExoticPics = <Exotic />
     }
     if (isExotic2) {
-        Exotic2 = <Exotic2 />
+        ExoticPics2 = <Exotic2 />
     }
     if (isTown) {
-        Town = <Town />
+        TownPics = <Town />
     }
     if (isVideogames) {
-        Videogames = <Videogames />
+        VideogamesPics = <Videogames />
     }
     if (isMovies) {
         MoviePics = <Movies />

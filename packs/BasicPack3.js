@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-const BasicPack2 = () => {
+const BasicPack3 = () => {
     return (
         <View style={styles.container}>
              <View>
@@ -62,4 +62,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default BasicPack2;
+export default BasicPack3;

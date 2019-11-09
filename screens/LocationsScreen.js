@@ -145,7 +145,7 @@ const LocationScreen = props => {
                     {isOpenMovies ? Movies : Nothing}
                     <LocationHeader value={isTVShows} onToggle={toggleTVShows} onClick={changeTVShows}>TV Shows</LocationHeader>
                     {isOpenTVShows ? TVShows : Nothing}
-                    <LocationHeader value={isVideogames} onToggle={toggleVideogames} onClick={changeVideogames}>Exotic</LocationHeader>
+                    <LocationHeader value={isVideogames} onToggle={toggleVideogames} onClick={changeVideogames}>Video games</LocationHeader>
                     {isOpenVideogames ? Videogames : Nothing }
                 </View>
             </ScrollView>
