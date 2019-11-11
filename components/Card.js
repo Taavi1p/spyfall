@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image} from 'react-native';
 import * as Animatable from 'react-native-animatable';
+import Colors from '../constants/Colors';
 
 const Card = props => {
     let picture = <Image/>
@@ -122,7 +123,7 @@ const styles = StyleSheet.create({
         height: 260,
         width: 260,
         borderWidth: 4,
-        borderColor: 'black',
+        borderColor: Colors.secondary,
         alignItems: 'center',
         justifyContent: 'center',
     },

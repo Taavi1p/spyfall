@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button} from 'react-native';
 import MainButton from '../components/MainButton';
 import InputButton from '../components/InputButton';
+import LinearGradient from 'react-native-linear-gradient';
+
 
 const StartScreen = props => {
     const isBasics = props.navigation.getParam('isBasics');
@@ -89,6 +91,7 @@ const StartScreen = props => {
 
     return (
         <View style={styles.container}>
+            <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']}>
             <Text style={styles.title}>Spyfall</Text>
             <View style={styles.containerBox}>
                 <Text style={styles.number}>{playersNumber}</Text>
@@ -106,6 +109,7 @@ const StartScreen = props => {
                 <MainButton onClick={startGame}>start</MainButton>
             </View>
             {ErrorText}
+        </LinearGradient>
         </View>
     )
 }

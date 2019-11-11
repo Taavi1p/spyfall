@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import { Switch } from 'react-native-switch';
+import Colors from '../constants/Colors';
 
 const LocationHeader = props => {
     return (
@@ -15,7 +16,7 @@ const LocationHeader = props => {
                 circleSize={25}
                 barHeight={20}
                 circleBorderWidth={0}
-                backgroundActive={'blue'}
+                backgroundActive={Colors.secondary}
                 backgroundInactive={'grey'}
                 circleActiveColor={'white'}
                 circleInActiveColor={'white'}
