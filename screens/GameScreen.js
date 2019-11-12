@@ -15,6 +15,10 @@ import Videogames from '../packs/VideogamesPack';
 // import { useSelector } from 'react-redux';
 // ---------use Redux later-----------------
 
+import Colors from '../constants/Colors';
+import { LinearGradient } from 'expo-linear-gradient';
+
+
 let isTicking = false;
 let time = 479;
 
@@ -144,8 +148,10 @@ const GameScreen = props => {
             {VideogamesPics}
             </ScrollView>
             <View style={styles.buttons}>
-               <Text style={styles.time}>{timer}</Text>
-               {TimeButton}
+                <LinearGradient colors={[ Colors.primary, Colors.primary, Colors.secondary]} style={styles.gradient}>
+                    <Text style={styles.time}>{timer}</Text>
+                    {TimeButton}
+               </LinearGradient>
             </View>
         </View>
     )
@@ -154,14 +160,17 @@ const GameScreen = props => {
 const styles = StyleSheet.create({
     screen: {
         flex: 1,
-        paddingBottom: 20,
     },
     buttons: {
+    
+    },
+    gradient: {
         flexDirection: 'row',
         marginTop: 'auto',
         paddingHorizontal: 30,
         justifyContent: 'space-between',
         marginTop: 20,
+        paddingBottom: 20,
     },
     time: {
         fontSize: 40,

@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button} from 'react-native';
 import MainButton from '../components/MainButton';
 import InputButton from '../components/InputButton';
-import LinearGradient from 'react-native-linear-gradient';
+
+import Colors from '../constants/Colors';
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 const StartScreen = props => {
@@ -91,7 +93,7 @@ const StartScreen = props => {
 
     return (
         <View style={styles.container}>
-            <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']}>
+            <LinearGradient colors={[Colors.primary, Colors.primary, Colors.secondary]} style={styles.gradient}>
             <Text style={styles.title}>Spyfall</Text>
             <View style={styles.containerBox}>
                 <Text style={styles.number}>{playersNumber}</Text>
@@ -108,7 +110,6 @@ const StartScreen = props => {
                 <MainButton onClick={toRules}>rules</MainButton>
                 <MainButton onClick={startGame}>start</MainButton>
             </View>
-            {ErrorText}
         </LinearGradient>
         </View>
     )
@@ -117,8 +118,13 @@ const StartScreen = props => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingBottom: 50,
-        marginTop: 80,
+    },
+
+    gradient: {
+        flex: 1,
+        height: '100%',
+        width: '100%',
+        marginTop: '20%',
         paddingHorizontal: 40,
     },
     title: {
