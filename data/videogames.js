@@ -22,7 +22,7 @@ export default [
     [
         'Hay Day',
         ['lumberjack Greg', 'mailman Alfred', 'town visitor', 'fisherman Angus', 'Tom', 'cow', 'pig']
-    ]
+    ],
     [
         'Sims',
         ['Plesant mom', 'plesant daughter', 'goth daughter', 'goth dad', 'Ginia Kat', 'family dog', 'baby']
@@ -30,7 +30,7 @@ export default [
     [
         'Angry Birds',
         ['Mighty Eagle', 'Red bird', 'Chef Pig', 'black bird', 'yellow bird', 'bluebird', 'pig', 'toucan', 'ice bird']
-    ]
+    ],
     [
         'Clash of Clans',
         ['Golem', 'hog rider', 'minion', 'valkyrie', 'barbarian', 'archer', 'goblin', 'giant', 'wizard']

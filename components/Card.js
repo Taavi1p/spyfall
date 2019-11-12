@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Colors from '../constants/Colors';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const Card = props => {
     let picture = <Image/>
@@ -105,6 +106,7 @@ const Card = props => {
                 {picture}
                 <Text style={styles.text}>{props.role}</Text>
                 <Text style={styles.place}>{props.location}</Text>
+                <LinearGradient colors={[Colors.primary, Colors.secondary]} style={styles.gradient}></LinearGradient>
             </View>
             <View style={styles.box}>
                 <Animatable.View animation="fadeOut" duration={1000} delay={200} style={[styles.westBox, styles.triangle]}></Animatable.View>
@@ -123,9 +125,16 @@ const styles = StyleSheet.create({
         height: 260,
         width: 260,
         borderWidth: 4,
-        borderColor: Colors.secondary,
+        borderColor: 'black',
         alignItems: 'center',
         justifyContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    gradient: {
+        marginTop: 'auto',
+        height: 15,
+        width: '100%',
     },
     text: {
         fontSize: 20,
@@ -133,11 +142,13 @@ const styles = StyleSheet.create({
     place: {
         fontSize: 25,
         fontWeight: 'bold',
+        textAlign: 'center'
     },
     image: {
         height: 100,
         width: 100,
         marginBottom: 10,
+        marginTop: 'auto',
     },
     box: {
         height: 260,

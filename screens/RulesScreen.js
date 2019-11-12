@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView} from 'react-native';
 import CustomHeader from '../components/CustomHeader';
+import Colors from '../constants/Colors';
 
 const RulesScreen = props => {
 
@@ -14,6 +15,7 @@ const RulesScreen = props => {
         <ScrollView>
         <View style={{paddingTop: 20, paddingBottom: 100, paddingHorizontal: 20}}>
             <Text style={styles.header}> 1. Start of the game</Text>
+            <View style={styles.line}></View>
             <Text style={styles.text}>
                 In a game of Spyfall the players find themselves in a certain location while each player gets an additional role assigned to them. At least one player is a spy who does not know the location of the group.
             </Text>
@@ -25,6 +27,7 @@ const RulesScreen = props => {
                 Now that player asks the next question and so forth. The player who asked the last question can be questioned directly afterwards.
             </Text>
             <Text style={styles.header}> 2. During the game</Text>
+            <View style={styles.line}></View>
             <Text style={styles.text}>
                 The goal of the spy is to find out the location or survive undetected until the timer is over.
                 The goal for the rest of the players is to find out who doesn't know the location and therefore is a spy.
@@ -42,6 +45,7 @@ const RulesScreen = props => {
                 If more than 2 spies are in the game, once a spy reveals his identity every other spy has to do the same and every spy can guess a separate location. If at least one is right, the spies win.
             </Text>
             <Text style={styles.header}> 3. End of the game</Text>
+            <View style={styles.line}></View>
             <Text style={styles.text}>
                 The game will end once the timer has finished. After, the spy has 5 seconds to come out and make a guess. If the spy chose not to reveal himself the players can discuss and will vote on who they think the spy is. The player who got the majority of the votes is considered the groups guess. If the group guessed correctly the group wins otherwise the spy wins.
             </Text>
@@ -55,12 +59,18 @@ const RulesScreen = props => {
 const styles = StyleSheet.create({
     text: {
         fontSize: 20,
-        marginTop: 20,
+        marginTop: 15,
     },
     header: {
-        marginTop: 20,
+        marginTop: 25,
         fontSize: 30,
         fontWeight: 'bold',
+    },
+    line: {
+        width: '90%',
+        height: 3,
+        backgroundColor: Colors.secondary,
+        borderRadius: 2,
     },
     signature: {
         textAlign: 'right',

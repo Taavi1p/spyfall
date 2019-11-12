@@ -21,6 +21,7 @@ const StartScreen = props => {
     const [playersNumber, setPlayersNumber] = useState(5);
     const [spiesNumber, setSpiesNumber] = useState(1);
     const [spyText, setSpyText] = useState('spy');
+    const [firstRender, setFirstRender] = useState(true);
     
     const addPlayers = () => {
         if (playersNumber < 99) {
@@ -88,6 +89,13 @@ const StartScreen = props => {
         }
     }
 
+    if (firstRender) {
+        props.navigation.setParams({isBasics: true, isBasics2: true, isMovies: false, isTVShows: false,
+            isExotic: false, isExotic2: false, isTown: false, isVideogames: false,
+            isBasics3: false, isBasics4: false})
+        setFirstRender(false)
+    }
+
     console.log(isMovies);
     console.log(isVideogames);
 
@@ -128,9 +136,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: 40,
     },
     title: {
-        fontSize: 60,
+        fontSize: 70,
         color: 'black',
-        fontWeight: 'bold',
+        fontFamily: 'avenir-heavy',
         textAlign: 'center',
         marginBottom: 50,
     },
