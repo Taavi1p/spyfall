@@ -20,15 +20,15 @@ const Card = props => {
     else if (props.location === 'coal mine') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic/mining.png')} />;}
     else if (props.location === 'casino') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic/dices.png')} />;}
 
-    else if (props.location === 'airplane') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic2/resturant.png')} />;}
-    else if (props.location === 'wedding') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic2/police.png')} />;}
-    else if (props.location === 'spa') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic2/cemetery.png')} />;}
-    else if (props.location === 'zoo') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic2/party.png')} />;}
-    else if (props.location === 'amusement park') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic2/theatre.png')} />;}
-    else if (props.location === 'jazz club') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic2/old.png')} />;}
-    else if (props.location === 'art museum') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic2/book.png')} />;}
-    else if (props.location === 'coal mine') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic2/submarine.png')} />;}
-    else if (props.location === 'casino') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic2/satellite.png')} />;}
+    else if (props.location === 'resturant') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic2/resturant.png')} />;}
+    else if (props.location === 'police station') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic2/police.png')} />;}
+    else if (props.location === 'Cemetery') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic2/cemetery.png')} />;}
+    else if (props.location === 'Corporate Party') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic2/party.png')} />;}
+    else if (props.location === 'Theatre') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic2/theatre.png')} />;}
+    else if (props.location === 'Retirement Home') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic2/old.png')} />;}
+    else if (props.location === 'Library') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic2/book.png')} />;}
+    else if (props.location === 'Submarine') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic2/submarine.png')} />;}
+    else if (props.location === 'Space Station') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/basic2/satellite.png')} />;}
 
     else if (props.location === 'Avengers') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/movies/avengers.png')} />;}
     else if (props.location === 'Monsters Inc') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/movies/monster.png')} />;}
@@ -91,7 +91,7 @@ const Card = props => {
     else if (props.location === 'The White House') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/exotic2/white-house.png')} />;}
 
     else if (props.location === 'McDonalds') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/town/mcdonalds.png')} />;}
-    else if (props.location === 'Cinema') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/town/movie.png')} />;}
+    else if (props.location === 'Cinema') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/town/movie-tickets.png')} />;}
     else if (props.location === 'Bowling hall') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/town/bowling.png')} />;}
     else if (props.location === 'Trampoline Park') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/town/trampoline.png')} />;}
     else if (props.location === 'Park') {picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/town/park.png')} />;}
