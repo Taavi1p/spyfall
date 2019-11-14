@@ -8,7 +8,7 @@
       "ios",
       "android"
     ],
-    "version": "3.0.0",
+    "version": "3.1.0",
     "orientation": "portrait",
     "icon": "./assets/spy.png",
     "splash": {
@@ -27,8 +27,7 @@
       "bundleIdentifier": "com.taavi.spyfall"
     },
     "android": {
-      
-      "versionCode": 3,
+      "versionCode": 4,
       "package": "com.taavi.spyfall",
       "permissions": []
     }
