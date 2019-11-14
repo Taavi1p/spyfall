@@ -5,39 +5,39 @@ const MoviesPack = () => {
     return (
         <View style={styles.container}>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/avengers.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/movies/avengers.png')} />
                 <Text style={styles.name}>Avengers</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/monster.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/movies/monster.png')} />
                 <Text style={styles.name}>Monsters Inc</Text>
              </View>
              <View>                
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/fish.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/movies/fish.png')} />
                 <Text style={styles.name}>Nemo</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/cruise.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/movies/cruise.png')} />
                 <Text style={styles.name}>Titanic</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/shreky.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/movies/shreky.png')} />
                 <Text style={styles.name}>Shrek</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/golden-snitch.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/movies/golden-snitch.png')} />
                 <Text style={styles.name}>Harry Potter</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/death-star.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/movies/death-star.png')} />
                 <Text style={styles.name}>Star Wars</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/batman.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/movies/batman.png')} />
                 <Text style={styles.name}>Justice League</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/toys.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/movies/toys.png')} />
                 <Text style={styles.name}>Toy Story</Text>
             </View>
         </View>

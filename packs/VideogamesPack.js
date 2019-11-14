@@ -5,39 +5,39 @@ const Videogames = () => {
     return (
         <View style={styles.container}>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/minecraft.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/videogames/minecraft.png')} />
                 <Text style={styles.name}>minecraft</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/grand-theft-auto.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/videogames/grand-theft-auto.png')} />
                 <Text style={styles.name}>grand theft auto</Text>
              </View>
              <View>                
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/fortnite.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/videogames/fortnite.png')} />
                 <Text style={styles.name}>fortnite</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/wii.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/videogames/wii.png')} />
                 <Text style={styles.name}>wii sport</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/teddy-bear.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/videogames/teddy-bear.png')} />
                 <Text style={styles.name}>five nights at freddys</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/hay-day.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/videogames/hay-day.png')} />
                 <Text style={styles.name}>hay day</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/sims.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/videogames/sims.png')} />
                 <Text style={styles.name}>sims</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/angry-bird.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/videogames/angry-bird.png')} />
                 <Text style={styles.name}>angry birds</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/clash.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/videogames/clash.png')} />
                 <Text style={styles.name}>clash of clans</Text>
             </View>
         </View>

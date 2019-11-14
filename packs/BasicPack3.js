@@ -5,39 +5,39 @@ const BasicPack3 = () => {
     return (
         <View style={styles.container}>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/supermarket.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/basic3/supermarket.png')} />
                 <Text style={styles.name}>supermarket</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/pirate.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/basic3/pirate.png')} />
                 <Text style={styles.name}>pirate ship</Text>
              </View>
              <View>                
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/university.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/basic3/university.png')} />
                 <Text style={styles.name}>university</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/cruise.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/basic3/cruise.png')} />
                 <Text style={styles.name}>ocean liner</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/bank.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/basic3/bank.png')} />
                 <Text style={styles.name}>bank</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/movie.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/basic3/movie.png')} />
                 <Text style={styles.name}>movie studio</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/club.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/basic3/club.png')} />
                 <Text style={styles.name}>night club</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/hotel.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/basic3/hotel.png')} />
                 <Text style={styles.name}>hotel</Text>
             </View>
              <View>
-                <Image resizeMode='contain' style={styles.icon} source={require('../assets/embassy.png')} />
+                <Image resizeMode='contain' style={styles.icon} source={require('../assets/basic3/embassy.png')} />
                 <Text style={styles.name}>embassy</Text>
             </View>
         </View>
