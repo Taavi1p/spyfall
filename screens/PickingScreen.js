@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity, Animated} from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity, ImageBackground} from 'react-native';
 import CustomHeader from '../components/CustomHeader';
 import BlackBox from '../components/BlackBox';
 import Card from '../components/Card';
@@ -149,18 +149,23 @@ const PickingScreen = props => {
     console.log(isVideogames);
 
     return (
-        <View style={{flex: 1}}>
+        <ImageBackground style={styles.image} source={require('../assets/background.jpg')}>
             <CustomHeader onClick={goToStart}>cancel game</CustomHeader>
             <View style={styles.container}>
             <Text style={styles.player}>player {playerTurn}</Text>
             {Content}</View>
             {gotIt}
-        </View>
+        </ImageBackground>
 
     )
 }
 
 const styles = StyleSheet.create({
+    image: {
+        flex: 1,
+        height: '100%',
+        width: '100%',
+    },
     container: {
         flex: 1,
         alignItems: 'center',

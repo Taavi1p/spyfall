@@ -16,11 +16,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         paddingVertical: 5,
         paddingHorizontal: 20,
-        borderRadius: 5,
+        borderRadius: 7,
     },
     text: {
         color: 'white',
-        fontSize: 30,
+        fontSize: 28,
+        fontFamily: 'avenir-heavy'
     },
 })
 

@@ -51,18 +51,19 @@ const styles = StyleSheet.create({
         textAlignVertical: 'center',
     },
     toggle: {
-        marginLeft: 20,
+        marginLeft: 'auto',
+        marginRight: 30
     },
     image: {
         height: 30,
         width: 30,
-        marginLeft: 'auto',
+        marginLeft: 'auto'
     },
     clickArea: {
         height: '100%',
         justifyContent: 'center',
         paddingRight: 20,
-        flex: 1,
+        width: '30%'
     }
 })
 

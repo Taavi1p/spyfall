@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button} from 'react-native';
-import MainButton from '../components/MainButton';
-import InputButton from '../components/InputButton';
+import { StyleSheet, Text, View, Button, ImageBackground} from 'react-native';
 
-import Colors from '../constants/Colors';
-import { LinearGradient } from 'expo-linear-gradient';
+import MainButton from '../components/MainButton';
+import UsualButton from '../components/UsualButton';
+import InputButton from '../components/InputButton';
 
 
 const StartScreen = props => {
@@ -100,47 +99,47 @@ const StartScreen = props => {
     console.log(isVideogames);
 
     return (
-        <View style={styles.container}>
-            <LinearGradient colors={[Colors.primary, Colors.primary, Colors.secondary]} style={styles.gradient}>
-            <Text style={styles.title}>Spyfall</Text>
-            <View style={styles.containerBox}>
-                <Text style={styles.number}>{playersNumber}</Text>
-                <Text style={styles.text}>players</Text>
-                <InputButton add={addPlayers} substract={substractPlayers} />                
-            </View>
-            <View style={styles.containerBox}>
-                <Text style={styles.number}>{spiesNumber}</Text>
-                <Text style={styles.text}>{spyText}</Text>
-                <InputButton add={addSpies} substract={substractSpies}  />
-            </View>
-            <View style={styles.button}><Button onPress={toLocation} title="choose locations" color='black' /></View>
-            <View style={styles.buttons}>
-                <MainButton onClick={toRules}>rules</MainButton>
-                <MainButton onClick={startGame}>start</MainButton>
-            </View>
-        </LinearGradient>
-        </View>
+            <ImageBackground style={styles.image} source={require('../assets/background.jpg')}>
+                <View style={styles.container}>
+                    <Text style={styles.title}>Spyfall</Text>
+                    <View style={styles.containerBox}>
+                        <Text style={styles.number}>{playersNumber}</Text>
+                        <Text style={styles.text}>players</Text>
+                        <InputButton add={addPlayers} substract={substractPlayers} />                
+                    </View>
+                    <View style={styles.containerBox}>
+                        <Text style={styles.number}>{spiesNumber}</Text>
+                        <Text style={styles.text}>{spyText}</Text>
+                        <InputButton add={addSpies} substract={substractSpies}  />
+                    </View>
+                    <UsualButton onClick={toLocation}>LOCATIONS</UsualButton>
+                    <View style={styles.buttons}>
+                        <MainButton onClick={toRules}>RULES</MainButton>
+                        <MainButton onClick={startGame}>START</MainButton>
+                    </View>
+                </View>
+            </ImageBackground>
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
 
-    gradient: {
+    image: {
         flex: 1,
         height: '100%',
         width: '100%',
+    },
+    container: {
+        flex: 1,
         marginTop: '20%',
-        paddingHorizontal: 40,
+        paddingHorizontal: 40
     },
     title: {
         fontSize: 70,
         color: 'black',
         fontFamily: 'avenir-heavy',
         textAlign: 'center',
-        marginBottom: 50,
+        marginBottom: 30,
     },
     containerBox: {
         flexDirection: 'row',
@@ -159,14 +158,11 @@ const styles = StyleSheet.create({
         width: 60,
         backgroundColor: 'black',
     },
-    button: {
-        marginTop: 30,
-        marginLeft: 'auto',
-    },
     buttons: {
         flexDirection: 'row',
-        justifyContent: "space-evenly",
         marginTop: 'auto',
+        alignItems: 'center',
+        justifyContent: 'space-evenly'
     },
     emptyBox: {
         width: '100%',

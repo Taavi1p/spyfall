@@ -140,6 +140,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: 'white'
     },
     gradient: {
         marginTop: 'auto',
