@@ -6,12 +6,14 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const Card = props => {
     let picture;
+    const pic = props.picture;
+    console.log('this is pic ' + pic);
     if (props.location === '')
     {
         picture = <Image resizeMode='contain' style={styles.image} source={require('../assets/detective.png')} />;
     }
     else {
-        picture = <Image resizeMode='contain' style={styles.image} source={require({})} />;
+        picture = <Image resizeMode='contain' style={styles.image} source={pic} />;
     }
 
     return (

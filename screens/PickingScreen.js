@@ -99,7 +99,7 @@ const PickingScreen = props => {
         setLocation(locationArray[randomPack][randomLocation][0]);
         setLocy(location);
         setJob(locationArray[randomPack][randomLocation][1][Math.floor(Math.random()*(locationArray[randomPack][randomLocation][1].length-1))]);
-        setPicture(locationArray[randomPack][randomLocation][2])
+        setPicture(locationArray[randomPack][randomLocation][2][0])
         if (roleArray[0] === 'spy'){
             setJob('you\'re the spy');
             setLocy('')
