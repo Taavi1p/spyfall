@@ -14,11 +14,8 @@ import Movies from '../data/movies';
 import Town from '../data/town';
 import TVShows from '../data/tvshows';
 import Videogames from '../data/videogames';
-// import { useSelector } from 'react-redux';
-// ------------use redux later---------------
 
 const PickingScreen = props => {
-    // const currentPacks = useSelector(state => state.packs.packs)
     const playerNumber = props.navigation.getParam('playerAmount');
     const spiesNumber = props.navigation.getParam('spyAmount');
     const isBasics = props.navigation.getParam('isBasics');
@@ -41,11 +38,8 @@ const PickingScreen = props => {
     const [locy, setLocy] = useState('');
     const [locationArray, setLocationArray] = useState([]);
     const [randomPack, setRandomPack] = useState(Math.floor(Math.random()*(locationArray.length + 1)));
+    const [picture, setPicture] = useState('');
 
-    // console.log(isBasics)
-    // console.log(isMovies)
-    // console.log(isTVShows)
-    // console.log('---------PickingScreen------')
 
     const makeArray = () => {
         console.log('----------New Game-------------')
@@ -105,7 +99,7 @@ const PickingScreen = props => {
         setLocation(locationArray[randomPack][randomLocation][0]);
         setLocy(location);
         setJob(locationArray[randomPack][randomLocation][1][Math.floor(Math.random()*(locationArray[randomPack][randomLocation][1].length-1))]);
-        
+        setPicture(locationArray[randomPack][randomLocation][2])
         if (roleArray[0] === 'spy'){
             setJob('you\'re the spy');
             setLocy('')
@@ -137,16 +131,13 @@ const PickingScreen = props => {
     let gotIt = <Animatable.View animation="fadeIn" duration={2200} delay={2400} style={{width: '100%', height: 60}}></Animatable.View>;
     
     if (roleVisible === true ){
-        Content = <Card role={job} location={locy} />;
+        Content = <Card role={job} location={locy} picture={picture} />;
         gotIt = <TouchableOpacity onPress={onGotIt}><View style={styles.box}><Text style={styles.boxText}>got it</Text></View></TouchableOpacity>;
     }
     else if (roleVisible === false){
         Content = <BlackBox onClick={onReveal} />;
         gotIt = <Animatable.View animation="fadeIn" duration={2200} delay={2400} style={{width: '100%', height: 60}}></Animatable.View>
     }
-
-    console.log(isMovies);
-    console.log(isVideogames);
 
     return (
         <ImageBackground style={styles.image} source={require('../assets/background.jpg')}>
