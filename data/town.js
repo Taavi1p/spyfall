@@ -2,47 +2,47 @@ export default [
     [
         'McDonalds',
         ['janitor', 'customer', 'unhealty eater', 'regular customer', 'manager', 'kid'],
-        [require()]
+        [require('../assets/town/mcdonalds.png')]
     ],
     [
         'Cinema',
         ['kid', 'movie critic', 'movie fanatic', 'ticket seller', 'annoyed parent', 'girl friend', 'boy friend'],
-        [require()]
+        [require('../assets/town/movie-tickets.png')]
     ],
     [
         'Bowling hall',
         ['pro bowler', 'kid', 'casual player', 'pool player', 'parent', 'birthday kid'],
-        [require()]
+        [require('../assets/town/bowling.png')]
     ],
     [
         'Trampoline Park',
         ['kid', 'acrobat', 'parent', 'janitor', 'instructor', 'birthday kid', 'mom'],
-        [require()]
+        [require('../assets/town/trampoline.png')]
     ],
     [
         'Park',
         ['old man', 'bird feeder', 'chess player', 'dog walker', 'little kid'],
-        [require()]
+        [require('../assets/town/park.png')]
     ],
     [
         'Department Store',
         ['shopper', 'kid', 'cashier', 'shoe shop owner', 'perfume showcaser'],
-        [require()]
+        [require('../assets/town/shopping-bag.png')]
     ],
     [
         'Mini Golf',
         ['boyfriend', 'girlfriend', 'instructor', 'manager', 'regular player', 'first-time player'],
-        [require()]
+        [require('../assets/town/minigolf.png')]
     ],
     [
         'Gucci store',
         ['celebrity', 'rich kid', 'rich parent', 'sports star'],
-        [require()]
+        [require('../assets/town/gucci.png')]
     ],
     [
         'Water Park',
         ['kid', 'instructor', 'life guard', 'parent', 'birthday kid'],
-        [require()]
+        [require('../assets/town/slide.png')]
     ]
 
 ]
