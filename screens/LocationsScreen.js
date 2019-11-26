@@ -12,15 +12,19 @@ import TownPacks from '../packs/TownPack'
 import TVShowsPack from '../packs/TVShowsPack';
 import LocationHeader from '../components/LocationHeader';
 import VideogamesPack from '../packs/VideogamesPack';
-//import { useSelector } from 'react-redux';
-// ------use redux later-------------------
+import BasicCountryPack from '../packs/BasicCountryPack';
+import AsiaPack from '../packs/AsiaPack';
+import EuropePack from '../packs/EuropePack';
 
 const LocationScreen = props => {
 
     const goToStart = () => {
         props.navigation.navigate({routeName: 'Start', params: {
             isBasics: isBasics, isBasics2: isBasics2, isBasics3: isBasics3, isBasics4: isBasics4, 
-            isExotic: isExotic, isExotic2: isExotic2, isTown: isTown, isVideogames: isVideogames, isMovies: isMovies, isTVShows: isTVShows,
+            isExotic: isExotic, isExotic2: isExotic2, isTown: isTown,
+            isVideogames: isVideogames, isMovies: isMovies, isTVShows: isTVShows,
+            isAsia: isAsia, isBasicCountry: isBasicCountry, isEurope: isEurope
+
         }})
     }
     const [isBasics, setIsBasics] = useState(true); 
@@ -33,6 +37,9 @@ const LocationScreen = props => {
     const [isTown, setIsTown] = useState(false);
     const [isTVShows, setIsTVShows] = useState(false);
     const [isVideogames, setIsVideogames] = useState(false);
+    const [isBasicCountry, setIsBasicCountry] = useState(false);
+    const [isAsia, setIsAsia] = useState(false);
+    const [isEurope, setIsEurope] = useState(false);
     const Basics = <BasicPack />;
     const Basics2 = <BasicPack2 />;
     const Basics3 = <BasicPack3 />;
@@ -44,6 +51,9 @@ const LocationScreen = props => {
     const TVShows = <TVShowsPack />;
     const Nothing = <View></View>;
     const Videogames = <VideogamesPack />
+    const BasicCountry = <BasicCountryPack />
+    const Asia = <AsiaPack />
+    const Europe = <EuropePack />
     
     const [isOpenBasics, setIsOpenBasic] = useState(true);
     const [isOpenBasics2, setIsOpenBasic2] = useState(false);
@@ -55,6 +65,9 @@ const LocationScreen = props => {
     const [isOpenTown, setIsOpenTown] = useState(false);
     const [isOpenTVShows, setIsOpenTVShows] = useState(false);
     const [isOpenVideogames, setIsOpenVideogames] = useState(false);
+    const [isOpenBasicCountry, setIsOpenBasicCountry] = useState(false);
+    const [isOpenAsia, setIsOpenAsia] = useState(false);
+    const [isOpenEurope, setIsOpenEurope] = useState(false);
 
     const changeBasics = () => {
         setIsOpenBasic(!isOpenBasics);
@@ -85,6 +98,15 @@ const LocationScreen = props => {
     }
     const changeVideogames = () => {
         setIsOpenVideogames(!isOpenVideogames);
+    }
+    const changeBasicCountry = () => {
+        setIsOpenBasicCountry(!isOpenBasicCountry);
+    }
+    const changeAsia = () => {
+        setIsOpenAsia(!isOpenAsia);
+    }
+    const changeEurope = () => {
+        setIsOpenEurope(!isOpenEurope);
     }
 
     const toggleBasics = () => {
@@ -117,12 +139,16 @@ const LocationScreen = props => {
     const toggleVideogames = () => {
         setIsVideogames(!isVideogames);
     }
-    // console.log(isBasics)
-    // console.log(isMovies)
-    // console.log(isTVShows)
-    // console.log('---------changed------')
-    console.log(isMovies);
-    console.log(isVideogames);
+    const toggleBasicCountry = () => {
+        setIsBasicCountry(!isBasicCountry);
+    }
+    const toggleAsia = () => {
+        setIsAsia(!isAsia);
+    }
+    const toggleEurope = () => {
+        setIsEurope(!isEurope);
+    }
+   
 
     return (
         <View style={styles.container}>
@@ -149,6 +175,12 @@ const LocationScreen = props => {
                     {isOpenTVShows ? TVShows : Nothing}
                     <LocationHeader value={isVideogames} onToggle={toggleVideogames} onClick={changeVideogames}>Video games</LocationHeader>
                     {isOpenVideogames ? Videogames : Nothing }
+                    <LocationHeader value={isBasicCountry} onToggle={toggleBasicCountry} onClick={changeBasicCountry}>Countries</LocationHeader>
+                    {isOpenBasicCountry ? BasicCountry : Nothing }
+                    <LocationHeader value={isAsia} onToggle={toggleAsia} onClick={changeAsia}>Asia</LocationHeader>
+                    {isOpenAsia ? Asia : Nothing }
+                    <LocationHeader value={isEurope} onToggle={toggleEurope} onClick={changeEurope}>Europe</LocationHeader>
+                    {isOpenEurope ? Europe : Nothing }
                 </View>
             </ScrollView>
         </View>

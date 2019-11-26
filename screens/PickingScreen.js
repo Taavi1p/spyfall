@@ -14,6 +14,9 @@ import Movies from '../data/movies';
 import Town from '../data/town';
 import TVShows from '../data/tvshows';
 import Videogames from '../data/videogames';
+import BasicCountry from '../data/basicsCounty';
+import Asia from '../data/asia';
+import Europe from '../data/europe';
 
 const PickingScreen = props => {
     const playerNumber = props.navigation.getParam('playerAmount');
@@ -28,6 +31,9 @@ const PickingScreen = props => {
     const isExotic2 = props.navigation.getParam('isExotic2');
     const isTown = props.navigation.getParam('isTown');
     const isVideogames = props.navigation.getParam('isVideogames');
+    const isBasicCountry = props.navigation.getParam('isBasicCountry');
+    const isAsia = props.navigation.getParam('isAsia');
+    const isEurope = props.navigation.getParam('isEurope');
     const [roleVisible, setRoleVisible] = useState(false);
     const [randomLocation, setRandomLocation] = useState(Math.floor(Math.random()*9));
     const [location, setLocation] = useState('');
@@ -84,6 +90,15 @@ const PickingScreen = props => {
         if (isVideogames) {
             locationArray.push(Videogames)
         }
+        if (isBasicCountry) {
+            locationArray.push(BasicCountry)
+        }
+        if (isAsia) {
+            locationArray.push(Asia)
+        }
+        if (isEurope) {
+            locationArray.push(Europe)
+        }
     }
 
     if (select)
@@ -122,6 +137,7 @@ const PickingScreen = props => {
                 isBasics: isBasics, isBasics2: isBasics2, isMovies: isMovies, isTVShows: isTVShows,
                 isExotic: isExotic, isExotic2: isExotic2, isTown: isTown, isVideogames: isVideogames,
                 isBasics3: isBasics3, isBasics4: isBasics4,
+                isAsia: isAsia, isBasicCountry: isBasicCountry, isEurope: isEurope
 
             }})
         }

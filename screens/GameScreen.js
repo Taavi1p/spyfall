@@ -12,8 +12,9 @@ import Town from '../packs/TownPack';
 import Movies from '../packs/MoviesPack';
 import TVShows from '../packs/TVShowsPack';
 import Videogames from '../packs/VideogamesPack';
-// import { useSelector } from 'react-redux';
-// ---------use Redux later-----------------
+import BasicCountryPack from '../packs/BasicCountryPack';
+import AsiaPack from '../packs/AsiaPack';
+import EuropePack from '../packs/EuropePack';
 
 import Colors from '../constants/Colors';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -38,6 +39,9 @@ const GameScreen = props => {
     const isExotic2 = props.navigation.getParam('isExotic2');
     const isTown = props.navigation.getParam('isTown');
     const isVideogames = props.navigation.getParam('isVideogames');
+    const isBasicCountry = props.navigation.getParam('isBasicCountry');
+    const isAsia = props.navigation.getParam('isAsia');
+    const isEurope = props.navigation.getParam('isEurope');
     let TimeButton;
     let intervally;
     const [timer, setTimer] = useState('8:00');
@@ -59,7 +63,6 @@ const GameScreen = props => {
         let min = Math.floor(time / 60);
         let sec = time - (min * 60);
     
-        //add a leading zero (as a string value) if seconds less than 10
         if (sec < 10) {
             sec = "0" + sec;
         }
@@ -96,6 +99,9 @@ const GameScreen = props => {
     let TownPics;
     let TVShowPics;
     let VideogamesPics;
+    let BasicCountryPics;
+    let AsiaPics;
+    let EuropePics;
     
     if (isBasics) {
         BasicPics = <Basics />
@@ -127,9 +133,15 @@ const GameScreen = props => {
     if (isTVShows) {
         TVShowPics = <TVShows />
     }
-
-    console.log(isMovies);
-    console.log(isVideogames);
+    if (isBasicCountry) {
+        BasicCountryPics = <BasicCountryPack />
+    }
+    if (isAsia) {
+        AsiaPics = <AsiaPack />
+    }
+    if (isEurope) {
+        EuropePics = <EuropePack />
+    }
 
 
     return (
@@ -146,6 +158,9 @@ const GameScreen = props => {
             {TownPics}
             {TVShowPics}
             {VideogamesPics}
+            {BasicCountryPics}
+            {AsiaPics}
+            {EuropePics}
             </ScrollView>
             <View style={styles.buttons}>
                 <LinearGradient colors={[ Colors.primary, Colors.primary, Colors.secondary]} style={styles.gradient}>
