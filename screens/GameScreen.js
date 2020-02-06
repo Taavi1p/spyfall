@@ -2,20 +2,20 @@ import React, {useState} from 'react';
 import { StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import CustomHeader from '../components/CustomHeader';
 import MainButton from '../components/MainButton';
-import Basics from '../packs/BasicPack';
-import Basics2 from '../packs/BasicPack2';
-import Basics3 from '../packs/BasicPack3';
-import Basics4 from '../packs/BasicPack4';
-import Exotic from '../packs/ExoticPack';
-import Exotic2 from '../packs/ExoticPack2';
-import Town from '../packs/TownPack';
-import Movies from '../packs/MoviesPack';
-import TVShows from '../packs/TVShowsPack';
-import Videogames from '../packs/VideogamesPack';
-import BasicCountryPack from '../packs/BasicCountryPack';
-import AsiaPack from '../packs/AsiaPack';
-import EuropePack from '../packs/EuropePack';
-
+import Pack from '../packs/Pack.js'
+import Asia from '../data/asia';
+import Basics from '../data/basics';
+import Basics2 from '../data/basics2';
+import Basics3 from '../data/basics3';
+import Basics4 from '../data/basics4';
+import BasicsCountry from '../data/basicsCounty';
+import Europe from '../data/europe';
+import Exotic from '../data/exotic';
+import Exotic2 from '../data/exotic2';
+import Movies from '../data/movies';
+import Town from '../data/town';
+import TVShows from '../data/tvshows';
+import VideoGames from '../data/videogames';
 import Colors from '../constants/Colors';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -104,45 +104,44 @@ const GameScreen = props => {
     let EuropePics;
     
     if (isBasics) {
-        BasicPics = <Basics />
+        BasicPics = <Pack array={Basics} />
     }
     if (isBasics2) {
-        BasicPics2 = <Basics2 />
+        BasicPics2 = <Pack array={Basics2}/>
     }
     if (isBasics3) {
-        BasicPics3 = <Basics3 />
+        BasicPics3 = <Pack array={Basics3}/>
     }
     if (isBasics4) {
-        BasicPics4 = <Basics4 />
-    }
-    if (isExotic) {
-        ExoticPics = <Exotic />
-    }
-    if (isExotic2) {
-        ExoticPics2 = <Exotic2 />
-    }
-    if (isTown) {
-        TownPics = <Town />
-    }
-    if (isVideogames) {
-        VideogamesPics = <Videogames />
+        BasicPics4 = <Pack array={Basics4}/>
     }
     if (isMovies) {
-        MoviePics = <Movies />
+        MoviePics = <Pack array={Movies}/>
     }
     if (isTVShows) {
-        TVShowPics = <TVShows />
+        TVShowPics  = <Pack array={TVShows}/>
+    }
+    if (isExotic) {
+        ExoticPics = <Pack array={Exotic}/>
+    }
+    if (isExotic2) {
+        ExoticPics = <Pack array={Exotic2}/>
+    }
+    if (isTown) {
+        TownPics = <Pack array={Town}/>
+    }
+    if (isVideogames) {
+        VideoGamesPics = <Pack array={VideoGames}/>
     }
     if (isBasicCountry) {
-        BasicCountryPics = <BasicCountryPack />
-    }
-    if (isAsia) {
-        AsiaPics = <AsiaPack />
+        BasicCountrryPics = <Pack array={BasicsCountry}/>
     }
     if (isEurope) {
-        EuropePics = <EuropePack />
+        EuropePics = <Pack array={Europe}/>
     }
-
+    if (isAsia) {
+        AsiaPics = <Pack array={Asia}/>
+    }
 
     return (
         <View style={styles.screen}>

@@ -1,20 +1,21 @@
 import React, {useState} from 'react';
 import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import CustomHeader from '../components/CustomHeader';
-import BasicPack from '../packs/BasicPack';
-import BasicPack2 from '../packs/BasicPack2';
-import BasicPack3 from '../packs/BasicPack3';
-import BasicPack4 from '../packs/BasicPack4';
-import ExcoticPack from '../packs/ExoticPack';
-import ExcoticPack2 from '../packs/ExoticPack2';
-import MoviesPack from '../packs/MoviesPack';
-import TownPacks from '../packs/TownPack'
-import TVShowsPack from '../packs/TVShowsPack';
 import LocationHeader from '../components/LocationHeader';
-import VideogamesPack from '../packs/VideogamesPack';
-import BasicCountryPack from '../packs/BasicCountryPack';
-import AsiaPack from '../packs/AsiaPack';
-import EuropePack from '../packs/EuropePack';
+import Pack from '../packs/Pack.js';
+import aAsia from '../data/asia';
+import aBasics from '../data/basics';
+import aBasics2 from '../data/basics2';
+import aBasics3 from '../data/basics3';
+import aBasics4 from '../data/basics4';
+import aBasicsCountry from '../data/basicsCounty';
+import aEurope from '../data/europe';
+import aExotic from '../data/exotic';
+import aExotic2 from '../data/exotic2';
+import aMovies from '../data/movies';
+import aTown from '../data/town';
+import aTVShows from '../data/tvshows';
+import aVideoGames from '../data/videogames';
 
 const LocationScreen = props => {
 
@@ -40,20 +41,20 @@ const LocationScreen = props => {
     const [isBasicCountry, setIsBasicCountry] = useState(false);
     const [isAsia, setIsAsia] = useState(false);
     const [isEurope, setIsEurope] = useState(false);
-    const Basics = <BasicPack />;
-    const Basics2 = <BasicPack2 />;
-    const Basics3 = <BasicPack3 />;
-    const Basics4 = <BasicPack4 />;
-    const Exotic = <ExcoticPack />
-    const Exotic2 = <ExcoticPack2 />
-    const Movies = <MoviesPack />;
-    const Town = <TownPacks />
-    const TVShows = <TVShowsPack />;
+    const Basics = <Pack array={aBasics}/>;
+    const Basics2 = <Pack array={aBasics2}/>;
+    const Basics3 = <Pack array={aBasics3}/>;
+    const Basics4 = <Pack array={aBasics4}/>;
+    const Exotic = <Pack array={aExotic}/>;
+    const Exotic2 = <Pack array={aExotic2}/>;
+    const Movies = <Pack array={aMovies}/>;
+    const Town = <Pack array={aTown}/>;
+    const TVShows = <Pack array={aTVShows}/>;
     const Nothing = <View></View>;
-    const Videogames = <VideogamesPack />
-    const BasicCountry = <BasicCountryPack />
-    const Asia = <AsiaPack />
-    const Europe = <EuropePack />
+    const Videogames = <Pack array={aVideoGames}/>;
+    const BasicCountry = <Pack array={aBasicsCountry}/>;
+    const Asia = <Pack array={aAsia}/>;
+    const Europe = <Pack array={aEurope}/>;
     
     const [isOpenBasics, setIsOpenBasic] = useState(true);
     const [isOpenBasics2, setIsOpenBasic2] = useState(false);
